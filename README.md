@@ -1,8 +1,8 @@
 # My (Arch) Linux home directory.
 
 ### Dependencies for my configurations to work
-`pacman -S xorg xorg-server sddm i3 neovim ripgrep`
-`sudo systemctl enable sddm`
+1. `pacman -S xorg xorg-server sddm i3 neovim ripgrep`: Package depdencies;
+2. `sudo systemctl enable sddm`: Enable SDDM, my login manager.
 
 ### Table of contents
 1. Bash configuration: `./.bashrc`;
