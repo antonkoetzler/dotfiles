@@ -1,9 +1,8 @@
 *
-
 !.gitignore
 !README.md
-.xinitrc
-.xsession
-.bashrc
-!./config/nvim
-!./config/i3
+!.xinitrc
+!.xsession
+!.bashrc
+!.config/
+!.config/**
