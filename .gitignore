@@ -1,0 +1,8 @@
+*
+
+!.gitignore
+.xinitrc
+.xsession
+.bashrc
+!./config/nvim
+!./config/i3
