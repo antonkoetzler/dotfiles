@@ -7,3 +7,6 @@ setxkbmap -layout br
 # Prevent screen from sleeping.
 xset s off
 xset -dpms
+
+# Refresh rate
+# xrandr --output HDMI-1 --mode 2560-1080 --rate 74.99
