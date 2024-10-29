@@ -8,6 +8,7 @@ vim.g.maplocalleader = '\\'
 
 -- General shortcuts.
 vim.api.nvim_set_keymap('i', '<C-Backspace>', '<C-w>', opts)          -- Ctrl + backspace.
+vim.api.nvim_set_keymap('i', '<C-h>', '<C-w>', opts)                  -- Ctrl + backspace.
 vim.api.nvim_set_keymap('n', '<leader>tc', '<cmd>tabnew<CR>', opts)   -- Create a new tab.
 vim.api.nvim_set_keymap('n', '<leader>tx', '<cmd>tabclose<CR>', opts) -- Close a tab.
 vim.api.nvim_set_keymap('n', '<leader>tn', '<cmd>tabnext<CR>', opts)  -- Move to the previous tab.
