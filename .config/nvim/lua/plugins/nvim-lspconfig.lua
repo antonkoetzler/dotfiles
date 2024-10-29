@@ -41,6 +41,18 @@ return {
     -- Typescript.
     lspconfig.ts_ls.setup({
       on_attach = on_attach,
+      settings = {
+        javascript = {
+          format = {
+            quoteStyle = "single"
+          }
+        },
+        typescript = {
+          format = {
+            quoteStyle = "single"
+          }
+        }
+      },
     })
   end,
 }
