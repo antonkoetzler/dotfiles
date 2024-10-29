@@ -8,5 +8,8 @@ setxkbmap -layout br
 xset s off
 xset -dpms
 
-# Refresh rate
+# Refresh rate.
 # xrandr --output HDMI-1 --mode 2560-1080 --rate 74.99
+
+# Disabling mouse acceleration.
+# xinput --set-prop 11 "libinput Accel Profile Enabled" 0 1
