@@ -4,6 +4,9 @@ xsetroot -solid "#FFB6C1"
 # Keyboard layout.
 setxkbmap -layout br
 
+# Mouse sensitivity.
+xinput --set-prop 11 "libinput Accel Speed" -0.5
+
 # Prevent screen from sleeping.
 xset s off
 xset -dpms
