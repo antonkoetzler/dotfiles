@@ -1,5 +1,5 @@
 # Background.
-xsetroot -solid "#FFFFFF"
+xsetroot -solid "#000000"
 
 # Keyboard layout.
 setxkbmap -layout br
