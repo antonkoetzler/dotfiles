@@ -1,6 +1,6 @@
 *
 !.gitignore
-!hypr/
-!hypr/**
+!i3/
+!i3/**
 !nvim/
 !nvim/**
