@@ -6,5 +6,5 @@
 
 ### Table of contents
 1. Bash configuration: `./.bashrc`;
-2. i3 window manager configuration: `./.xinitrc`, `./.xsession`, & `./.config/i3`;
+2. Hyprland tiling window manager configuration: `./.config/hypr`;
 3. Neovim configuration: `./.config/nvim`.
