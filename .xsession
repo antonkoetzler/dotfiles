@@ -12,7 +12,7 @@ xset s off
 xset -dpms
 
 # Refresh rate.
-# xrandr --output HDMI-1 --mode 2560-1080 --rate 74.99
+xrandr --output HDMI-1 --mode 2560-1080 --rate 74.99
 
 # Disabling mouse acceleration.
-# xinput --set-prop 11 "libinput Accel Profile Enabled" 0 1
+xinput --set-prop 11 "libinput Accel Profile Enabled" 0 1
