@@ -4,5 +4,7 @@
 !i3/**
 !i3status/
 !i3status/**
+!kitty/
+!kitty/**
 !nvim/
 !nvim/**
