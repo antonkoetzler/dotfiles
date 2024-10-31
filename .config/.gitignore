@@ -6,3 +6,5 @@
 !i3status/**
 !nvim/
 !nvim/**
+!kitty/
+!kitty/**
