@@ -207,7 +207,9 @@ bar {
 }
 
 # Colors for the each window's wrapper.
-# class                 border  backgr. text    indica. child_border                                                                     
+# class                 border  backgr. text    indica. child_border     
 client.focused_inactive #0D1010 #212121 #D9D9D9 #0D1010 #063340
 client.unfocused        #0D1010 #212121 #D9D9D9 #0D1010 #063340
 client.focused          #FFB6C1 #FFB6C1 #000000 #FFB6C1 #FFB6C1
+
+for_window [class="^.*"] border pixel 2
