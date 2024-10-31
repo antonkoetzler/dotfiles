@@ -18,4 +18,5 @@ require('lazy').setup({
   -- Color schemes.
   require('plugins.vim-moonfly-colors'),
   require('plugins.vim-nightfly-colors'),
+  require('plugins.catppuccin'),
 })
