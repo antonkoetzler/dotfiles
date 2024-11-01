@@ -9,12 +9,12 @@ return function(_, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'ge', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 
-  --[[ vim.api.nvim_create_autocmd('BufWritePre', {
+  vim.api.nvim_create_autocmd('BufWritePre', {
     buffer = bufnr,
     callback = function()
       vim.lsp.buf.format({ bufnr = bufnr })
     end,
-  }) ]]
+  })
 
   vim.api.nvim_create_autocmd({ 'BufLeave', 'BufEnter' }, {
     callback = function(_)
