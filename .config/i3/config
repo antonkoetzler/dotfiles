@@ -199,7 +199,7 @@ bar {
                 separator #444444
                 background #222222
                 statusline #B1B1B1
-                focused_workspace #FFB6C1 #FFB6C1 #000000
+                focused_workspace #58B6A6 #58B6A6 #000000
                 active_workspace #0D1010 #212121 #D9D9D9
                 inactive_workspace #0D1010 #212121 #D9D9D9
                 urgent_workspace #eb709b #eb709b #ffffff
@@ -210,6 +210,6 @@ bar {
 # class                 border  backgr. text    indica. child_border     
 client.focused_inactive #0D1010 #212121 #D9D9D9 #0D1010 #063340
 client.unfocused        #0D1010 #212121 #D9D9D9 #0D1010 #063340
-client.focused          #FFB6C1 #FFB6C1 #000000 #FFB6C1 #FFB6C1
+client.focused          #58B6A6 #58B6A6 #000000 #58B6A6 #58B6A6
 
 for_window [class="^.*"] border pixel 2
