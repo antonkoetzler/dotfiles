@@ -1,5 +1,11 @@
 # My (Arch) Linux home directory.
 
+### TODO
+1. Ricing `wofi`;
+2. Ricing `sddm`;
+3. Changing volume with laptop volume keys;
+4. Wifi GUI.
+
 ### Dependencies for my configurations to work.
 1. Principal dependencies: `pacman -S sddm wayland waybar ttf-iosevka-nerd power-profiles-daemon pulseaudio hyprland hyprpaper wofi neovim livegrep firefox dolphin`
 - `wayland`: Not an xorg configuration; `hyprland` uses `wayland`;
