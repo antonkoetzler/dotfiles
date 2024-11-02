@@ -4,6 +4,8 @@
 !hypr/**
 !waybar/
 !waybar/**
+!wofi/
+!wofi/**
 !kitty/
 !kitty/**
 !nvim/

@@ -1,14 +1,14 @@
 # My (Arch) Linux home directory.
 
 ### TODO
-1. Ricing `wofi`;
-2. Ricing `sddm`;
-3. Changing volume with laptop volume keys;
-4. Wifi GUI.
+1. Ricing `sddm`;
+2. Wifi GUI.
 
 ### Dependencies for my configurations to work.
-0. Install `yay`: `git clone https://aur.archlinux.org/yay.git; cd yay; makepkg -si; cd ..; rm -rf yay`
-1. Principal dependencies: `yay -S sddm xf86-video-amdgpu mesa mesa-utils vulkan-radeon opencl-amd wayland waybar ttf-iosevka-nerd power-profiles-daemon pulseaudio pavucontrol udiskie hyprland hyprpaper wofi neovim livegrep firefox dolphin`
+0. Install `yay`;
+`git clone https://aur.archlinux.org/yay.git; cd yay; makepkg -si; cd ..; rm -rf yay`
+1. Principal dependencies;
+`yay -S sddm xf86-video-amdgpu mesa mesa-utils vulkan-radeon opencl-amd wayland waybar ttf-iosevka-nerd power-profiles-daemon pulseaudio pavucontrol network-manager brightnessctl udiskie hyprland hyprpaper wofi neovim livegrep firefox dolphin`
 - `sddm`: Login manager;
 - `xf86-video-amdgpu`, `mesa`, `mesa-utils`, `vulkan-radeon`, & `opencl-amd`: AMD drivers;
 - `wayland`: Not an xorg configuration; `hyprland` uses `wayland`;
@@ -16,6 +16,8 @@
 - `ttf-iosevka-nerd`: Default font;
 - `power-profiles-daemon`: For the power button menu to work in `waybar`;
 - `pulseaudio` & `pavucontrol`: Audio managers;
+- `network-manager`: Network manager, use `nmtui` to connect to networks;
+- `brightnessctl`: Brightness control on laptops;
 - `udiskie`: Automatically mount USBs;
 - `hyprland`: Our tiling window manager;
 - `wofi`: Application launcher;
@@ -23,11 +25,15 @@
 - `livegrep`: For fuzzy finding in `neovim`;
 - `firefox`: Default browser;
 - `dolphin`: File manager.
-2. `sudo systemctl enable sddm`: Enable the login manager;
-3. `sudo systemctl enable power-profiles-daemon`: Enables the `power-profiles-daemon`.
+2. Enabling systemd services
+- `sudo systemctl enable sddm`: Enable the login manager;
+- `sudo systemctl enable power-profiles-daemon`: Enables the `power-profiles-daemon`;
+- `sudo systemctl enable NetworkManager`: Enables `network-manager`.
+3. My SDDM theme is maldives, so edit `/lib/sddm/sddm.conf.d/default.conf` to set maldives as your current theme.
 
 ### Table of contents of my configurations.
 1. `hyprland` tiling window manager: `./.config/hypr`;
 2. `waybar` status bar: `./.config/waybar`;
-3. Bash: `./.bashrc`;
-4. Neovim: `./.config/nvim`.
+3. `wofi` application launcher: `./.config/wofi`;
+4. Bash: `./.bashrc`;
+5. Neovim: `./.config/nvim`.
