@@ -1,10 +1,22 @@
 # My (Arch) Linux home directory.
 
 ### Dependencies for my configurations to work.
-1. Principal dependencies: `pacman -S xorg xorg-server xorg-xinit sddm i3 dunst dmenu kitty neovim ripgrep`;
-2. `sudo systemctl enable sddm`: Enable SDDM, my login manager.
+1. Principal dependencies: `pacman -S sddm wayland waybar ttf-iosevka-nerd power-profiles-daemon hyprland hyprpaper wofi neovim livegrep firefox dolphin`
+- `wayland`: Not an xorg configuration; `hyprland` uses `wayland`;
+- `waybar`: Status bar;
+- `ttf-iosevka-nerd`: Default font;
+- `power-profiles-daemon`: For the power button menu to work in `waybar`;
+- `hyprland`: Our tiling window manager;
+- `wofi`: Application launcher;
+- `neovim`: Text editor;
+- `livegrep`: For fuzzy finding in `neovim`;
+- `firefox`: Default browser;
+- `dolphin`: File manager.
+2. `sudo systemctl enable sddm`: Enable the login manager;
+3. `sudo systemctl enable power-profiles-daemon`: Enables the `power-profiles-daemon`.
 
 ### Table of contents of my configurations.
-1. I3 tiling window manager: `./.config/i3` & `./.config/i3status/`;
-2. Bash: `./.bashrc`;
-3. Neovim: `./.config/nvim`.
+1. `hyprland` tiling window manager: `./.config/hypr`;
+2. `waybar` status bar: `./.config/waybar`;
+3. Bash: `./.bashrc`;
+4. Neovim: `./.config/nvim`.
