@@ -7,7 +7,9 @@
 4. Wifi GUI.
 
 ### Dependencies for my configurations to work.
-1. Principal dependencies: `pacman -S sddm wayland waybar ttf-iosevka-nerd power-profiles-daemon pulseaudio pavucontrol hyprland hyprpaper wofi neovim livegrep firefox dolphin`
+1. Principal dependencies: `pacman -S sddm xf86-video-amdgpu mesa mesa-utils vulkan-radeon opencl-amd wayland waybar ttf-iosevka-nerd power-profiles-daemon pulseaudio pavucontrol hyprland hyprpaper wofi neovim livegrep firefox dolphin`
+- `sddm`: Login manager;
+- `xf86-video-amdgpu`, `mesa`, `mesa-utils`, `vulkan-radeon`, & `opencl-amd`: AMD drivers;
 - `wayland`: Not an xorg configuration; `hyprland` uses `wayland`;
 - `waybar`: Status bar;
 - `ttf-iosevka-nerd`: Default font;
