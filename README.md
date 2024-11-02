@@ -7,12 +7,13 @@
 4. Wifi GUI.
 
 ### Dependencies for my configurations to work.
-1. Principal dependencies: `pacman -S sddm wayland waybar ttf-iosevka-nerd power-profiles-daemon pulseaudio hyprland hyprpaper wofi neovim livegrep firefox dolphin`
+1. Principal dependencies: `pacman -S sddm wayland waybar ttf-iosevka-nerd power-profiles-daemon pulseaudio pavucontrol hyprland hyprpaper wofi neovim livegrep firefox dolphin`
 - `wayland`: Not an xorg configuration; `hyprland` uses `wayland`;
 - `waybar`: Status bar;
 - `ttf-iosevka-nerd`: Default font;
 - `power-profiles-daemon`: For the power button menu to work in `waybar`;
 - `pulseaudio`: Audio manager;
+- `pavucontrol`: Audio manager with `pulseaudio`;
 - `hyprland`: Our tiling window manager;
 - `wofi`: Application launcher;
 - `neovim`: Text editor;
