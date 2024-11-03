@@ -29,6 +29,7 @@ require('lazy').setup({
   require('plugins.nvim-cmp'),        -- LSP: suggestions & autocompletes.
   require('plugins.flutter-tools'),   -- LSP & other goodies for Flutter.
   require('plugins.git-blame'),       -- Git blame on lines.
+  require('plugins.bufferline'),      -- Buffer tab bar.
 
   -- Color schemes.
   require('plugins.vim-moonfly-colors'),
