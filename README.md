@@ -1,5 +1,10 @@
 # My (Arch) Linux setup.
 
+## Contains
+1. Login manager & tiling window manager configuration;
+2. Bash configuration;
+3. Other packages I use.
+
 ### Getting the login manager & tiling window manager working.
 0. Install `yay`;
 `git clone https://aur.archlinux.org/yay.git; cd yay; makepkg -si; cd ..; rm -rf yay`
@@ -18,10 +23,11 @@
 3. My SDDM theme is maldives, so edit `/lib/sddm/sddm.conf.d/default.conf` to set maldives as your current theme.
 
 ### Other packages I use for the configuration to work completely (also just main programs like browser, editor, etc).
-`sudo yay -S firefox dolphin flameshot-git udiskie zip unzip power-profiles-daemon pulseaudio pavucontrol network-manager brightnessctl`
+`sudo yay -S xf86-video-amdgpu mesa mesa-utils vulkan-radeon opencl-amd neovim livegrep kitty firefox dolphin grim slurp udiskie power-profiles-daemon pulseaudio pavucontrol network-manager brightnessctl gnome-disk-utility git-completion`
 - `xf86-video-amdgpu`, `mesa`, `mesa-utils`, `vulkan-radeon`, & `opencl-amd`: AMD drivers;
 - `neovim`: Text editor;
 - `livegrep`: For fuzzy finding in `neovim`;
+- `kitty`: Terminal;
 - `firefox`: Default browser;
 - `dolphin`: File manager;
 - `grim` & `slurp`: For screenshots;
@@ -37,5 +43,5 @@
 1. `hyprland` tiling window manager: `./.config/hypr`;
 2. `waybar` status bar: `./.config/waybar`;
 3. `wofi` application launcher: `./.config/wofi`;
-4. Bash: `./.bashrc`;
-5. Neovim: `./.config/nvim`.
+5. kitty terminal: `./.config/kitty`;
+6. Neovim: `./.config/nvim`.
