@@ -30,7 +30,8 @@
 - `pulseaudio` & `pavucontrol`: Audio managers;
 - `network-manager`: Network manager, use `nmtui` to connect to networks;
 - `brightnessctl`: Brightness control on laptops;
-- `gnome-disk-utility`: For browsering disk space.
+- `gnome-disk-utility`: For browsering disk space;
+- `git-completion`: Git tab completion on things such as branches.
 
 ### Table of contents of what is in `~/.config`.
 1. `hyprland` tiling window manager: `./.config/hypr`;
