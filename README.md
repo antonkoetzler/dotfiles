@@ -9,7 +9,7 @@
 0. Install `yay`;
 `git clone https://aur.archlinux.org/yay.git; cd yay; makepkg -si; cd ..; rm -rf yay`
 1. Principal dependencies;
-`yay -S sddm waybar ttf-iosevka-nerd hyprland hyprpaper wofi`
+`yay -S sddm wayland waybar ttf-iosevka-nerd hyprland hyprpaper wofi`
 - `sddm`: Login manager;
 - `wayland`: Not an xorg configuration; `hyprland` uses `wayland`;
 - `waybar`: Status bar;
