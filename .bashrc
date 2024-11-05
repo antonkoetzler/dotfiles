@@ -12,8 +12,8 @@ PS1='\[\033[1;36m\]\u \[\033[1;33m\]\w \[\033[0m\]$ '
 
 # Flutter
 # export PATH="$PATH:/home/$USER/flutter/bin"
-export PATH="$PATH:/home/anton/.fvm_flutter/bin"
-export PATH="$PATH:/home/anton/fvm/default/bin"
+export PATH="$PATH:/home/$USER/.fvm_flutter/bin"
+export PATH="$PATH:/home/$USER/fvm/default/bin"
 export CHROME_EXECUTABLE="chromium"
 alias run_hub="flutter run --dart-define-from-file=envs/.env"
 

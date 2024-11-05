@@ -1,6 +1,12 @@
 *
 !.gitignore
-!i3/
-!i3/**
+!hypr/
+!hypr/**
+!waybar/
+!waybar/**
+!wofi/
+!wofi/**
+!kitty/
+!kitty/**
 !nvim/
 !nvim/**

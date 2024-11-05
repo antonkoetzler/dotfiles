@@ -1,8 +1,6 @@
 *
 !.gitignore
 !README.md
-!.xinitrc
-!.xsession
 !.bashrc
 !.config/
 !.config/**
