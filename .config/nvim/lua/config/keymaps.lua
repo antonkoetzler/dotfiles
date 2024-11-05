@@ -26,4 +26,6 @@ vim.api.nvim_set_keymap('n', '<leader>on', '<cmd>BufferLineMoveNext<cr>', opts) 
 vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts)   -- Fuzzy file search.
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)    -- Fuzzy live grep.
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope buffers<cr>', opts)      -- Buffer list.
-vim.api.nvim_set_keymap('n', '<leader>ft', '<cmd>Telescope file_browser<cr>', opts) -- File browser
+
+-- neo-tree.
+vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>Neotree toggle<cr>', opts)

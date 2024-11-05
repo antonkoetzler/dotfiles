@@ -30,6 +30,7 @@ require('lazy').setup({
   require('plugins.git-blame'),       -- Git blame on lines.
   require('plugins.bufferline'),      -- Buffer tab bar.
   require('plugins.diffview'),        -- Viewing git differences and also merge conflict resolver tool.
+  require('plugins.neotree'),         -- File tree/explorer plugin.
 
   -- Color schemes.
   require('plugins.vim-moonfly-colors'),
