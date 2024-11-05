@@ -18,7 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   require('plugins.telescope'),       -- Good for file navegation (i.e. fuzzy searching, livegrep, etc).
   require('plugins.lualine'),         -- Status bar with various information at the bottom of the screen.
-  require('plugins.nvim-tree'),       -- Project/file tree.
   require('plugins.vim-fugitive'),    -- Lots of git features; I mainly use to solve merge conflicts.
   require('plugins.scope'),           -- Separate buffers shown in telescope by tab.
   require('plugins.dashboard'),       -- Shows a kitty on startup.
