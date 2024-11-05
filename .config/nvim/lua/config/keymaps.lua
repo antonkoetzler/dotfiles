@@ -9,23 +9,23 @@ vim.g.maplocalleader = '\\'
 -- General shortcuts.
 vim.api.nvim_set_keymap('i', '<C-Backspace>', '<C-w>', opts)          -- Ctrl + backspace.
 vim.api.nvim_set_keymap('i', '<C-h>', '<C-w>', opts)                  -- Ctrl + backspace.
-vim.api.nvim_set_keymap('n', '<leader>tc', '<cmd>tabnew<CR>', opts)   -- Create a new tab.
-vim.api.nvim_set_keymap('n', '<leader>tx', '<cmd>tabclose<CR>', opts) -- Close a tab.
-vim.api.nvim_set_keymap('n', '<leader>tn', '<cmd>tabnext<CR>', opts)  -- Move to the previous tab.
-vim.api.nvim_set_keymap('n', '<leader>tp', '<cmd>tabprev<CR>', opts)  -- Move to the next tab.
-vim.api.nvim_set_keymap('n', '<leader>x', '<cmd>bd<CR>', opts)        -- Delete a buffer.
-vim.api.nvim_set_keymap('n', '<leader>p', '<cmd>bp<CR>', opts)        -- Move to the previous buffer.
-vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>bn<CR>', opts)        -- Move to the next buffer.
+vim.api.nvim_set_keymap('n', '<leader>tc', '<cmd>tabnew<cr>', opts)   -- Create a new tab.
+vim.api.nvim_set_keymap('n', '<leader>tx', '<cmd>tabclose<cr>', opts) -- Close a tab.
+vim.api.nvim_set_keymap('n', '<leader>tn', '<cmd>tabnext<cr>', opts)  -- Move to the previous tab.
+vim.api.nvim_set_keymap('n', '<leader>tp', '<cmd>tabprev<cr>', opts)  -- Move to the next tab.
+vim.api.nvim_set_keymap('n', '<leader>x', '<cmd>bd<cr>', opts)        -- Delete a buffer.
+vim.api.nvim_set_keymap('n', '<leader>p', '<cmd>bp<cr>', opts)        -- Move to the previous buffer.
+vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>bn<cr>', opts)        -- Move to the next buffer.
 
 -- bufferline.
-vim.api.nvim_set_keymap('n', '<leader>d', '<cmd>BufferLinePickClose<CR>', opts) -- Select a specific buffer to close.
-vim.api.nvim_set_keymap('n', '<leader>op', '<cmd>BufferLineMovePrev<CR>', opts) -- Moves the selected buffer to the left of the buffer line.
-vim.api.nvim_set_keymap('n', '<leader>on', '<cmd>BufferLineMoveNext<CR>', opts) -- Moves the selected buffer to the right of the buffer line.
+vim.api.nvim_set_keymap('n', '<leader>d', '<cmd>BufferLinePickClose<cr>', opts) -- Select a specific buffer to close.
+vim.api.nvim_set_keymap('n', '<leader>op', '<cmd>BufferLineMovePrev<cr>', opts) -- Moves the selected buffer to the left of the buffer line.
+vim.api.nvim_set_keymap('n', '<leader>on', '<cmd>BufferLineMoveNext<cr>', opts) -- Moves the selected buffer to the right of the buffer line.
 
 -- Telescope.
-vim.api.nvim_set_keymap('n', '<LEADER>ff', '<CMD>Telescope find_files<CR>', opts) -- Fuzzy file search.
-vim.api.nvim_set_keymap('n', '<LEADER>fg', '<CMD>Telescope live_grep<CR>', opts)  -- Fuzzy live grep.
-vim.api.nvim_set_keymap('n', '<LEADER>fh', '<CMD>Telescope buffers<CR>', opts)    -- Buffer list.
+vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts) -- Fuzzy file search.
+vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)  -- Fuzzy live grep.
+vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope buffers<cr>', opts)    -- Buffer list.
 
 -- nvim-tree.
-vim.api.nvim_set_keymap('n', '<LEADER>e', '<CMD>:NvimTreeToggle<CR>', opts) -- Toggle the tree.
+vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>:NvimTreeToggle<cr>', opts) -- Toggle the tree.

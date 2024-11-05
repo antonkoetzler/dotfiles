@@ -30,6 +30,7 @@ require('lazy').setup({
   require('plugins.flutter-tools'),   -- LSP & other goodies for Flutter.
   require('plugins.git-blame'),       -- Git blame on lines.
   require('plugins.bufferline'),      -- Buffer tab bar.
+  require('plugins.diffview'),        -- Viewing git differences and also merge conflict resolver tool.
 
   -- Color schemes.
   require('plugins.vim-moonfly-colors'),
