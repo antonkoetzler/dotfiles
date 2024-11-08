@@ -28,4 +28,4 @@ vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope buffers<cr>', opts)      -- Buffer list.
 
 -- neo-tree.
-vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>Neotree toggle<cr>', opts)
+vim.api.nvim_set_keymap('n', '<leader>e', '<cmd>Neotree toggle reveal right<cr>', opts)
