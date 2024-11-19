@@ -11,11 +11,10 @@ alias grep='grep --color=auto'
 PS1='\[\033[1;36m\]\u \[\033[1;33m\]\w \[\033[0m\]$ '
 
 # Flutter
-# export PATH="$PATH:/home/$USER/flutter/bin"
-# export PATH="$PATH:/home/$USER/.fvm_flutter/bin"
-export PATH="$PATH:/home/$USER/fvm/default/bin"
-export CHROME_EXECUTABLE="chromium"
-alias run_hub="flutter run --dart-define-from-file=envs/.env"
+# export PATH="$PATH:/home/$USER/flutter/bin"   # Enable this after first installing Flutter.
+# export PATH="$PATH:/home/$USER/.local/bin"    # Enable this after first installing FVM.
+export PATH="$PATH:/home/$USER/fvm/default/bin" # Enable this after Flutter/FVM setup is complete.
+export CHROME_EXECUTABLE="google-chrome-stable" # CHROME_EXECUTABLE path Flutter needs for web development.
 
 # Git completion on tab key
 source /usr/share/git/completion/git-completion.bash
