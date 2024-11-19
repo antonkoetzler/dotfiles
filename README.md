@@ -25,7 +25,7 @@
 - `yay -S gbm hyprland-protocols hyprlang hyprutils hyprwayland-scanner libdrm sdbus-cpp wayland-protocols; cd ~/Downloads; git clone --recursive https://github.com/hyprwm/xdg-desktop-portal-hyprland; cd xdg-desktop-portal-hyprland/; cmake -DCMAKE_INSTALL_LIBEXECDIR=/usr/lib -DCMAKE_INSTALL_PREFIX=/usr -B build; cmake --build build; sudo cmake --install build`
 
 ### Other packages I use for the configuration to work completely (also just main programs like browser, editor, etc).
-`sudo yay -S xf86-video-amdgpu mesa mesa-utils vulkan-radeon opencl-amd neovim livegrep kitty firefox dolphin grim slurp udiskie power-profiles-daemon pulseaudio pavucontrol network-manager brightnessctl gnome-disk-utility git-completion network-manager-applet`
+`sudo yay -S xf86-video-amdgpu mesa mesa-utils vulkan-radeon opencl-amd neovim livegrep kitty firefox dolphin grim slurp udiskie power-profiles-daemon pulseaudio pavucontrol network-manager brightnessctl gnome-disk-utility git-completion`
 - `xf86-video-amdgpu`, `mesa`, `mesa-utils`, `vulkan-radeon`, & `opencl-amd`: AMD drivers;
 - `neovim`: Text editor;
 - `livegrep`: For fuzzy finding in `neovim`;
@@ -39,8 +39,7 @@
 - `network-manager`: Network manager, use `nmtui` to connect to networks;
 - `brightnessctl`: Brightness control on laptops;
 - `gnome-disk-utility`: For browsering disk space;
-- `git-completion`: Git tab completion on things such as branches;
-- `network-manager-applet`: Context menu for the network applet in `waybar`.
+- `git-completion`: Git tab completion on things such as branches.
 
 ### Table of contents of what is in `~/.config`.
 1. `hyprland` tiling window manager: `./.config/hypr`;
