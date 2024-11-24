@@ -1,5 +1,12 @@
 # My (Arch) Linux setup.
 
+## TODO (Things I still need to configure)
+1. Edit README to not be so ugly;
+2. Coffee emoji icon in waybar doesn't do anything;
+3. Find out why some emojis don't work in waybar.
+- Bluetooth audio icon;
+- Charging icon.
+
 ## Contains
 1. Login manager & tiling window manager configuration;
 2. Bash configuration;
@@ -25,7 +32,7 @@
 - `yay -S gbm hyprland-protocols hyprlang hyprutils hyprwayland-scanner libdrm sdbus-cpp wayland-protocols; cd ~/Downloads; git clone --recursive https://github.com/hyprwm/xdg-desktop-portal-hyprland; cd xdg-desktop-portal-hyprland/; cmake -DCMAKE_INSTALL_LIBEXECDIR=/usr/lib -DCMAKE_INSTALL_PREFIX=/usr -B build; cmake --build build; sudo cmake --install build`
 
 ### Other packages I use for the configuration to work completely (also just main programs like browser, editor, etc).
-`sudo yay -S xf86-video-amdgpu mesa mesa-utils vulkan-radeon opencl-amd neovim livegrep kitty firefox dolphin grim slurp udiskie power-profiles-daemon pulseaudio pavucontrol network-manager brightnessctl gnome-disk-utility git-completion`
+`sudo yay -S xf86-video-amdgpu mesa mesa-utils vulkan-radeon opencl-amd neovim livegrep kitty firefox dolphin grim slurp udiskie power-profiles-daemon pavucontrol network-manager brightnessctl gnome-disk-utility git-completion`
 - `xf86-video-amdgpu`, `mesa`, `mesa-utils`, `vulkan-radeon`, & `opencl-amd`: AMD drivers;
 - `neovim`: Text editor;
 - `livegrep`: For fuzzy finding in `neovim`;
@@ -35,7 +42,6 @@
 - `grim` & `slurp`: For screenshots;
 - `udiskie`: Automatically mount USBs;
 - `power-profiles-daemon`: For the power button menu to work in `waybar`;
-- `pulseaudio` & `pavucontrol`: Audio managers;
 - `network-manager`: Network manager, use `nmtui` to connect to networks;
 - `brightnessctl`: Brightness control on laptops;
 - `gnome-disk-utility`: For browsering disk space;
