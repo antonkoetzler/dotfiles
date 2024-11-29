@@ -2,5 +2,7 @@
 !.gitignore
 !README.md
 !.bashrc
+!.xsession
+!.xinitrc
 !.config/
 !.config/**
