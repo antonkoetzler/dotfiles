@@ -8,6 +8,7 @@
 - Charging icon.
 4. Rice waybar UI more;
 5. Rice SDDM.
+  see if upower acpi is needed
 
 ## Contains
 1. Login manager & tiling window manager configuration;
