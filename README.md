@@ -48,7 +48,8 @@
 - `brightnessctl`: Brightness control on laptops;
 - `gnome-disk-utility`: For browsering disk space;
 - `git-completion`: Git tab completion on things such as branches;
-- `otf-font-awesome`: Needed in waybar for icons of nerd fonts to work.
+- `otf-font-awesome`: Needed in waybar for icons of nerd fonts to work;
+- `upower` & `acpi`: For autoupdating battery percentage automatically in waybar.
 
 ### Table of contents of what is in `~/.config`.
 1. `hyprland` tiling window manager: `./.config/hypr`;
