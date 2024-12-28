@@ -2,13 +2,7 @@
 
 ## TODO (Things I still need to configure)
 1. Edit README to not be so ugly;
-2. Coffee emoji icon in waybar doesn't do anything;
-3. Find out why some emojis don't work in waybar;
-- Bluetooth audio icon;
-- Charging icon.
-4. Rice waybar UI more;
-5. Rice SDDM.
-  see if upower acpi is needed
+1. Rice SDDM (see if upower acpi is needed).
 
 ## Contains
 1. Login manager & tiling window manager configuration;
