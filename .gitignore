@@ -6,3 +6,4 @@
 !.xinitrc
 !.config/
 !.config/**
+!update.sh
