@@ -13,14 +13,31 @@
 0. Install `yay`;
 `git clone https://aur.archlinux.org/yay.git; cd yay; makepkg -si; cd ..; rm -rf yay`
 1. Principal dependencies;
-`yay -S sddm wayland waybar ttf-hack-nerd i3 dmenu i3-status hyprland hyprpaper wofi`
+`yay -S sddm swaylock wayland waybar ttf-hack-nerd i3 dmenu i3-status hyprland hyprpaper wofi`
 - `sddm`: Login manager;
+- `swaylock`: Lockscreen;
 - `wayland`: Not an xorg configuration; `hyprland` uses `wayland`;
 - `waybar`: Status bar;
 - `ttf-mononoki-nerd`: Default font;
 - `hyprland`: Our tiling window manager;
 - `wofi`: Application launcher;
 2. Enabling systemd services;
+- Copy this file to `/etc/systemd/system/lock@.service`
+```
+[Unit]
+Description=Lock the screen before suspend
+Before=sleep.target
+
+[Service]
+User=%I
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/swaylock
+
+[Install]
+WantedBy=sleep.target
+```
+- `sudo systemctl enable lock@flqn.service`: Ensures that `swaylock` activates on suspend;
 - `sudo systemctl enable sddm`: Enable the login manager;
 - `sudo systemctl enable NetworkManager`: Enables `network-manager`;
 3. My SDDM theme is maldives, so edit `/lib/sddm/sddm.conf.d/default.conf` to set maldives as your current theme;
