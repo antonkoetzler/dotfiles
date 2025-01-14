@@ -123,7 +123,7 @@
         "menu-actions": {
           "shutdown": "poweroff",
           "reboot": "reboot",
-          "suspend": "systemctl suspend",
+          "suspend": "swaylock",
           "hibernate": "systemctl hibernate"
         }
     }
