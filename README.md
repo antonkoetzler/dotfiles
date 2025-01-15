@@ -1,7 +1,6 @@
 # My (Arch) Linux setup.
 
 ## TODO (Things I still need to configure)
-1. Edit README to not be so ugly;
 1. Rice SDDM (see if upower acpi is needed).
 
 ## Contains
@@ -13,9 +12,9 @@
 0. Install `yay`;
 `git clone https://aur.archlinux.org/yay.git; cd yay; makepkg -si; cd ..; rm -rf yay`
 1. Principal dependencies;
-`yay -S sddm swaylock wayland waybar ttf-hack-nerd i3 dmenu i3-status hyprland hyprpaper wofi`
+`yay -S sddm sway swaylock wayland waybar ttf-hack-nerd i3 dmenu i3-status hyprland hyprpaper wofi`
 - `sddm`: Login manager;
-- `swaylock`: Lockscreen;
+- `sway` & `swaylock`: Lockscreen;
 - `wayland`: Not an xorg configuration; `hyprland` uses `wayland`;
 - `waybar`: Status bar;
 - `ttf-mononoki-nerd`: Default font;
@@ -51,4 +50,5 @@
 1. `waybar` status bar: `./.config/waybar`;
 1. `wofi` application launcher: `./.config/wofi`;
 1. kitty terminal: `./.config/kitty`;
+1. `swaylock-effects` lockscreen: `./.config/swaylock`;
 1. Neovim: `./.config/nvim`.
