@@ -1,7 +1,9 @@
 # My (Arch) Linux setup.
 
 ## TODO (Things I still need to configure)
-1. Rice SDDM (see if upower acpi is needed).
+1. Rice SDDM;
+2. Configure hyprlock;
+3. Clean up this README.
 
 ## Contains
 1. Login manager & tiling window manager configuration;
