@@ -20,4 +20,4 @@ export CHROME_EXECUTABLE="google-chrome-stable"
 source /usr/share/git/completion/git-completion.bash
 
 # Make opening applications with WSL work.
-export DISPLAY=$(ip route | awk "/default/ {print \$3}"):0
+# export DISPLAY=$(ip route | awk "/default/ {print \$3}"):0

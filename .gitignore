@@ -2,8 +2,6 @@
 !.gitignore
 !README.md
 !.bashrc
-!.xsession
-!.xinitrc
 !.config/
 !.config/**
 !install_dependencies.sh
