@@ -3,7 +3,7 @@
 ## TODO (Things I still need to configure)
 1. Rice SDDM;
 2. Configure hyprlock;
-3. Clean up this README.
+3. Clean up this README and turn `update.sh` into `install_dependencies.sh`.
 
 ## Contains
 1. Login manager & tiling window manager configuration;
