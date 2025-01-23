@@ -12,13 +12,12 @@
 0. Install `yay`;
 `git clone https://aur.archlinux.org/yay.git; cd yay; makepkg -si; cd ..; rm -rf yay`
 1. Principal dependencies;
-`yay -S sddm sway swaylock wayland waybar ttf-hack-nerd i3 dmenu i3-status hyprland hyprpaper wofi`
+`yay -S sddm wayland waybar ttf-hack-nerd i3 dmenu i3-status hyprland hyprpaper hyprlock wofi`
 - `sddm`: Login manager;
-- `sway` & `swaylock`: Lockscreen;
 - `wayland`: Not an xorg configuration; `hyprland` uses `wayland`;
 - `waybar`: Status bar;
 - `ttf-mononoki-nerd`: Default font;
-- `hyprland`: Our tiling window manager;
+- `hyprland`, `hyprpaper`, `hyprlock`: Our tiling window manager;
 - `wofi`: Application launcher;
 2. Enabling systemd services;
 - `sudo systemctl enable sddm`: Enable the login manager;
@@ -50,5 +49,4 @@
 1. `waybar` status bar: `./.config/waybar`;
 1. `wofi` application launcher: `./.config/wofi`;
 1. kitty terminal: `./.config/kitty`;
-1. `swaylock-effects` lockscreen: `./.config/swaylock`;
 1. Neovim: `./.config/nvim`.
