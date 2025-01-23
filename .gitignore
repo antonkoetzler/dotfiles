@@ -6,4 +6,4 @@
 !.xinitrc
 !.config/
 !.config/**
-!update.sh
+!install_dependencies.sh
