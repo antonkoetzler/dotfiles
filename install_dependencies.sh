@@ -6,6 +6,8 @@ cd yay
 makepkg -si
 cd ..
 rm -rf yay
+yay -Syyu
+yay -Syu
 
 # Principal dependencies.
 yay -S \
