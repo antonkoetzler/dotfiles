@@ -21,3 +21,6 @@ source /usr/share/git/completion/git-completion.bash
 
 # Make opening applications with WSL work.
 # export DISPLAY=$(ip route | awk "/default/ {print \$3}"):0
+
+export PATH="/home/flqn/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/flqn/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
