@@ -54,6 +54,7 @@ yay -S \
   # Screenshots
   grim \
   slurp \
+  wf-recorder \
 
   # Auto-mounting USBs.
   ntfs-3g
