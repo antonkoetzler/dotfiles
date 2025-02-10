@@ -28,3 +28,6 @@ export PHP_INI_SCAN_DIR="/home/flqn/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Sail (Laravel)
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
