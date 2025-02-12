@@ -8,5 +8,4 @@ Run `bash install_dependencies.sh`.
 
 ## TODO
 
-1. Rice SDDM;
-2. Configure hyprlock;
+1. Rice hyprlock.

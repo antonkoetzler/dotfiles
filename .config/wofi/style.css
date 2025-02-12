@@ -1,33 +1,45 @@
 /* Variables */
-@define-color primary rgb(0, 0, 0);
+@define-color primary-color rgb(32, 32, 32);
 @define-color on-primary-color rgb(255, 255, 255);
+
+::selection {
+  background-color: #000000; /* Highlight color */
+  color: #000000; /* Text color */
+}
 
 window {
   margin: 0px;
-  border: 2px solid @on-primary-color;
-  border-radius: 10px;
-  background-color: @primary;
+  border: 1px solid @on-primary-color;
+  background-color: @primary-color;
   font-family: 'Hack Nerd Font';
   font-size: 20px;
 }
 
 #input {
   margin: 5px;
-  border: none;
+  border: 1px solid @on-primary-color;
   color: @on-primary-color;
-  background-color: #272E33;
+  background-color: @primary-color;
+  caret-color: @on-primary-color;
+  border-radius: 0;
+}
+
+#input:focus {
+  box-shadow: none;
+}
+
+#input > image.left {
+  color: @on-primary-color;
 }
 
 #inner-box {
   margin: 5px;
   border: none;
-  background-color: @primary;
 }
 
 #outer-box {
   margin: 5px;
   border: none;
-  background-color: @primary;
 }
 
 #scroll {
@@ -36,11 +48,25 @@ window {
 }
 
 #text {
-  margin: 5px;
+  margin: 8px;
   border: none;
   color: @on-primary-color;
 }
 
 #entry:selected {
+  border: 1px solid @on-primary-color;
+  border-radius: 5px;
+  background: none;
+  border-radius: 0;
+}
+
+expander > list > #entry {
+  padding-left: 16px;
   background-color: #272E33;
+}
+
+expander > list > #entry:selected {
+  border: none;
+  background-color: #42494f;
+  border-radius: 0px;
 }

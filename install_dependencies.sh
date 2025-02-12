@@ -18,6 +18,8 @@ yay -S \
   wayland \
 
   # Login Manager
+  qt5-quickcontrols \
+  qt6 \
   sddm \
 
   # Hypr suite: Tilting window, wallpaper, & lock managers.
@@ -34,7 +36,7 @@ yay -S \
 
   # Default font.
   otf-font-awesome \
-  ttf-iosevka-nerd \
+  ttf-hack-nerd \
 
   # Terminal.
   kitty \

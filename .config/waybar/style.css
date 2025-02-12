@@ -1,10 +1,10 @@
 /* Variables */
-@define-color on-primary-color rgb(50, 195, 235);
-@define-color workspace-active-background-color rgba(50, 195, 235, 0.3);
+@define-color on-primary-color rgb(255, 255, 255);
+@define-color workspace-active-background-color rgba(255, 255, 255, 0.2);
 
 * {
-  font-family: 'Iosevka Nerd Font';
-  font-size: 16px;
+  font-family: 'Hack Nerd Font';
+  font-size: 14px;
 }
 
 window#waybar {
@@ -12,6 +12,7 @@ window#waybar {
   color: #ffffff;
   transition-property: background-color;
   transition-duration: .5s;
+  padding: 20px;
 }
 
 window#waybar.hidden {
@@ -44,8 +45,7 @@ button:hover {
   padding: 3px 3px 0 3px;
   margin: 5px;
   color: #FFFFFF;
-  border-radius: 5px;
-  border: 2px solid @on-primary-color;
+  border: 1px solid @on-primary-color;
 }
 
 #workspaces button.focused {
@@ -66,6 +66,7 @@ button:hover {
 }
 
 #language,
+#custom-power,
 #clock,
 #battery,
 #cpu,
@@ -77,12 +78,18 @@ button:hover {
 #pulseaudio,
 #tray,
 #mode {
-  border: 2px solid @on-primary-color;
+  border: 1px solid @on-primary-color;
   color: #ffffff;
-  border-radius: 5px;
   padding: 3px 10px 0 10px;
   margin-top: 5px;
   margin-bottom: 5px;
+  margin-right: 3px;
+}
+
+#custom-power {
+  padding-bottom: 3px;
+  padding-left: 7px;
+  padding-right: 10px;
 }
 
 #window,
@@ -90,53 +97,52 @@ button:hover {
     margin: 0 4px;
 }
 
+#battery.charging,
+#battery.plugged {
+  color: #ffffff;
+}
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left>widget:first-child>#workspaces {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right>widget:last-child>#workspaces {
-    margin-right: 0;
-}
-
-#battery.charging,
-#battery.plugged {
-    color: #ffffff;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-/* Using steps() instead of linear as a timing function to limit cpu usage */
-#battery.critical:not(.charging) {
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  margin-right: 0;
 }
 
 #tray>.passive {
-    -gtk-icon-effect: dim;
+  -gtk-icon-effect: dim;
 }
 
 #tray>.needs-attention {
-    -gtk-icon-effect: highlight;
+  -gtk-icon-effect: highlight;
 }
 
 #keyboard-state {
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
+  color: #000000;
+  padding: 0 0px;
+  margin: 0 5px;
+  min-width: 16px;
 }
 
 #keyboard-state>label {
-    padding: 0 5px;
+  padding: 0 5px;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
 }
