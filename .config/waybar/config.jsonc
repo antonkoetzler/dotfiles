@@ -14,6 +14,7 @@
         "hyprland/window"
     ],
     "modules-right": [
+        "custom/recording",
         "hyprland/language",
         "pulseaudio",
         "network",
@@ -126,5 +127,11 @@
           "suspend": "systemctl suspend",
           "hibernate": "systemctl hibernate"
         }
+    },
+    "custom/recording": {
+        "exec": "~/.config/waybar/scripts/recording_status.sh",
+        "interval": 1,
+        "format": "{}",
+        "on-click": "pkill wf-recorder"
     }
 }

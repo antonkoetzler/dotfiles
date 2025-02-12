@@ -77,7 +77,8 @@ button:hover {
 #network,
 #pulseaudio,
 #tray,
-#mode {
+#mode,
+#custom-recording {
   border: 1px solid @on-primary-color;
   color: #ffffff;
   padding: 3px 10px 0 10px;
