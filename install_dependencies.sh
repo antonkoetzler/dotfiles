@@ -24,6 +24,7 @@ yay -S \
   hyprland \
   hyprpaper \
   hyprlock \
+  hypridle \
 
   # Statusbar
   waybar \
