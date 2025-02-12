@@ -132,6 +132,7 @@
         "exec": "~/.config/waybar/scripts/recording_status.sh",
         "interval": 1,
         "format": "{}",
-        "on-click": "pkill wf-recorder"
+        "on-click": "pkill wf-recorder",
+        "tooltip": "Recording in progress..."
     }
 }
