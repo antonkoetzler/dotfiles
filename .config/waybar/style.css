@@ -16,7 +16,7 @@ window#waybar {
 
 window#waybar>box {
   margin: 10px 10px 0 10px;
-  padding: 5px;
+  /* padding: 5px; */
   border-radius: 5px;
   background-color: black;
   border: 0.5px solid @on-primary-color;
@@ -83,24 +83,17 @@ button:hover {
 #tray,
 #mode,
 #custom-recording {
-  border: 0.5 solid @on-primary-color;
+  border: none;
   color: #ffffff;
-  padding: 3px 8px;
+  padding: 3px 5px;
   margin: 5px;
   border-radius: 5px;
 }
 
-#cpu,
-#memory,
-#language {
-  margin: 5px;
-  border: none;
-}
-
 #custom-power {
   padding-bottom: 3px;
-  padding-left: 7px;
-  padding-right: 10px;
+  padding-left: 0;
+  padding-right: 17px;
 }
 
 #window,
