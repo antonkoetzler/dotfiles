@@ -60,7 +60,7 @@ yay -S \
   wf-recorder \
 
   # Auto-mounting USBs.
-  ntfs-3g
+  ntfs-3g \
   udiskie \
 
   # Network manager.
