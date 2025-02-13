@@ -8,11 +8,18 @@
 }
 
 window#waybar {
-  background-color: rgba(32, 32, 32, 0.7);
+  background-color: transparent;
   color: #ffffff;
   transition-property: background-color;
   transition-duration: .5s;
-  padding: 20px;
+}
+
+window#waybar>box {
+  margin: 10px 10px 0 10px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: black;
+  border: 0.5px solid @on-primary-color;
 }
 
 window#waybar.hidden {
@@ -33,7 +40,7 @@ button {
   box-shadow: inset 0 -3px transparent;
   /* Avoid rounded borders under each button name */
   border: none;
-  border-radius: 0;
+  border-radius: 5px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
@@ -45,7 +52,7 @@ button:hover {
   padding: 3px 3px 0 3px;
   margin: 5px;
   color: #FFFFFF;
-  border: 1px solid @on-primary-color;
+  border: 0.5 solid @on-primary-color;
 }
 
 #workspaces button.focused {
@@ -65,12 +72,9 @@ button:hover {
   box-shadow: inset 0 -3px #ffffff;
 }
 
-#language,
 #custom-power,
 #clock,
 #battery,
-#cpu,
-#memory,
 #disk,
 #temperature,
 #backlight,
@@ -79,12 +83,18 @@ button:hover {
 #tray,
 #mode,
 #custom-recording {
-  border: 1px solid @on-primary-color;
+  border: 0.5 solid @on-primary-color;
   color: #ffffff;
-  padding: 3px 10px 0 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-right: 3px;
+  padding: 3px 8px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+#cpu,
+#memory,
+#language {
+  margin: 5px;
+  border: none;
 }
 
 #custom-power {
@@ -112,12 +122,17 @@ button:hover {
   animation-direction: alternate;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
 .modules-left>widget:first-child>#workspaces {
   margin-left: 0;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
+.modules-center {
+  margin: 5px 0;
+  padding: 0 5px;
+  /* border: 0.5px solid @on-primary-color; */
+  border-radius: 5px;
+}
+
 .modules-right>widget:last-child>#workspaces {
   margin-right: 0;
 }
