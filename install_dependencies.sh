@@ -104,7 +104,6 @@ rm -rf xdg-desktop-portal-hyprland
 sudo systemctl enable sddm
 sudo systemctl enable NetworkManager
 
-
 # Prompting if https://github.com/antonkoetzler/nvim-config should also be setup.
 read -p "Install https://github.com/antonkoetzler/nvim-config? THIS WILL DELETE YOUR NEOVIM CONFIGURATION. (Y/n): " -r answer
 answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]') # Allow answer to be validated case-insensitively.
