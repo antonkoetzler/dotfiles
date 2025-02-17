@@ -20,6 +20,7 @@ yay -S \
   hyprpaper \
   hyprlock \
   hypridle \
+  xdg-desktop-portal-hyprland \
   waybar \
   wofi \
   otf-font-awesome \
@@ -45,24 +46,8 @@ yay -S \
   go \
   npm
 
-# xdg-desktop-portal-hyprland. This is used for compatbility of applications in hyprland for a smoother experience.
-yay -S \
-  cmake \
-  gbm \
-  hyprland-protocols \
-  hyprlang \
-  hyprutils \
-  hyprwayland-scanner \
-  libdrm \
-  sdbus-cpp \
-  wayland-protocols
-git clone --recursive https://github.com/hyprwm/xdg-desktop-portal-hyprland
-cd xdg-desktop-portal-hyprland/
-cmake -DCMAKE_INSTALL_LIBEXECDIR=/usr/lib -DCMAKE_INSTALL_PREFIX=/usr -B build
-cmake --build build
-sudo cmake --install build
-cd ..
-rm -rf xdg-desktop-portal-hyprland
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=hyprland
 
 # Enabling services in systemd.
 sudo systemctl enable sddm
