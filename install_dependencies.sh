@@ -47,8 +47,8 @@ yay -S \
   go \
   npm
 
-systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=hyprland
+# Ensure xdg-desktop-portal-hyprland works.
+dbus-update-activation-environment --systemd --all
 
 # Enabling services in systemd.
 sudo systemctl enable sddm
