@@ -21,6 +21,7 @@ yay -S \
   hyprlock \
   hypridle \
   xdg-desktop-portal-hyprland \
+  xdg-desktop-portal-kde \
   waybar \
   wofi \
   otf-font-awesome \

@@ -8,3 +8,5 @@
 !wofi/**
 !kitty/
 !kitty/**
+!xdg-desktop-portal/
+!xdg-desktop-portal/**
