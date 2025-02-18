@@ -27,7 +27,7 @@ yay -S \
   otf-font-awesome \
   ttf-hack-nerd \
   kitty \
-  firefox \
+  brave \
   dolphin \
   xf86-video-amdgpu \
   mesa \
@@ -46,6 +46,10 @@ yay -S \
   ripgrep \
   go \
   npm
+
+echo "[preferred]
+default = hyprland;gtk
+org.freedesktop.impl.portal.FileChooser = kde" > ~/.config/xdg-desktop-portal/hyprland-portals.conf
 
 # Ensure xdg-desktop-portal-hyprland works.
 dbus-update-activation-environment --systemd --all
