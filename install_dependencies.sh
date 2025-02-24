@@ -45,7 +45,8 @@ yay -S \
   git-completion \
   ripgrep \
   go \
-  npm
+  npm \
+  postgresql
 
 # Ensure xdg-desktop-portal-hyprland works.
 dbus-update-activation-environment --systemd --all
