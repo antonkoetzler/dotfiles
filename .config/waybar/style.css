@@ -90,9 +90,13 @@ button:hover {
   border-radius: 5px;
 }
 
+#docker-desktop {
+  background-color: green;
+}
+
 #custom-power {
-  padding-bottom: 3px;
-  padding-left: 0;
+  padding-bottom: 4px;
+  padding-left: 3px;
   padding-right: 17px;
 }
 
@@ -122,12 +126,7 @@ button:hover {
 .modules-center {
   margin: 5px 0;
   padding: 0 5px;
-  /* border: 0.5px solid @on-primary-color; */
   border-radius: 5px;
-}
-
-.modules-right>widget:last-child>#workspaces {
-  margin-right: 0;
 }
 
 #tray>.passive {
