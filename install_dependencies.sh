@@ -16,6 +16,10 @@ yay -S \
   qt5-quickcontrols \
   qt6 \
   sddm \
+  cmake \
+  meson \
+  cpio \
+  pkg-config \
   hyprland \
   hyprpaper \
   hyprlock \
@@ -50,6 +54,10 @@ yay -S \
 
 # Ensure xdg-desktop-portal-hyprland works.
 dbus-update-activation-environment --systemd --all
+
+# Installing hy3: https://github.com/outfoxxed/hy3.
+hyprpm update
+hyprpm add https://github.com/outfoxxed/hy3
 
 # Enabling services in systemd.
 sudo systemctl enable sddm
