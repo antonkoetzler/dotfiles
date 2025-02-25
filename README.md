@@ -9,7 +9,3 @@ Run `bash install_dependencies.sh`.
 ## Known problems and fixes
 
 - Brave is super slow when focused: Go to `brave://flags` and set `Preferred Ozone platform` to `Wayland`.
-
-## TODO
-
-- Finish setting up hy3.

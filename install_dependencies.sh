@@ -58,6 +58,9 @@ dbus-update-activation-environment --systemd --all
 # Installing hy3: https://github.com/outfoxxed/hy3.
 hyprpm update
 hyprpm add https://github.com/outfoxxed/hy3
+hyprpm update
+hyprpm enable hy3
+hyprctl reload
 
 # Enabling services in systemd.
 sudo systemctl enable sddm
