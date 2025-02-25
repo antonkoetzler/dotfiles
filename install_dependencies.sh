@@ -9,6 +9,23 @@ rm -rf yay
 yay -Syyu
 yay -Syu
 
+# GPU drivers.
+if [[ "$1" == "--gpu" || "$1" == "-g" ]]; then
+  if [[ "$2" == "amd" ]]; then
+    yay -S \
+      xf86-video-amdgpu \
+      mesa \
+      mesa-utils \
+      vulkan-radeon \
+      opencl-amd \
+  elif [[ "$2" == "nvidia" ]]; then
+    yay -S nvidia
+  else
+    echo "Usage: bash install_dependencies.sh --gpu <amd/nvidia>"
+    echo 0
+  fi
+fi
+
 # Principal dependencies.
 yay -S \
   base-devel \
@@ -33,11 +50,6 @@ yay -S \
   kitty \
   brave-browser \
   dolphin \
-  xf86-video-amdgpu \
-  mesa \
-  mesa-utils \
-  vulkan-radeon \
-  opencl-amd \
   grim \
   slurp \
   wf-recorder \
