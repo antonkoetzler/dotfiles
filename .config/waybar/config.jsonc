@@ -34,8 +34,8 @@
       "format-en": "en-US"
     },
     "tray": {
-        // "icon-size": 21,
-        "spacing": 10
+        "icon-size": 21,
+        "spacing": 50,
     },
     "clock": {
       "format": "{:%H:%M ~ %Y-%m-%d}",
