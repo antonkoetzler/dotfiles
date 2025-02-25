@@ -29,9 +29,9 @@ yay -S \
   waybar \
   wofi \
   otf-font-awesome \
-  ttf-hack-nerd \
+  ttf-iosevka-nerd \
   kitty \
-  brave \
+  brave-browser \
   dolphin \
   xf86-video-amdgpu \
   mesa \
