@@ -12,11 +12,16 @@ yay -Syu
 # GPU drivers.
 if [[ "$1" == "--gpu" || "$1" == "-g" ]]; then
   if [[ "$2" == "amd" ]]; then
+    yay -Rns nvidia
     yay -S \
       xf86-video-amdgpu \
       vulkan-radeon \
       opencl-amd
   elif [[ "$2" == "nvidia" ]]; then
+    yay -Rns \
+      xf86-video-amdgpu \
+      vulkan-radeon \
+      opencl-amd
     yay -S nvidia
   else
     echo "Accepted values: amd, nvidia"
