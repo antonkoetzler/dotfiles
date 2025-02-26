@@ -1,67 +1,89 @@
-@define-color background rgb(0, 0, 0);
-@define-color foreground rgb(255, 255, 255);
-@define-color foreground-translucent rgba(255, 255, 255, 0.2);
+/* ---------- Colors ---------- */
+@define-color background-color rgb(25, 25, 25);
+@define-color foreground-color rgb(255, 255, 255);
+@define-color foreground-color-translucent rgba(255, 255, 255, 0.3);
+/* ---------------------------- */
 
-/** Style that applies to everything. */
+/* ---------- Globals ---------- */
+/* Style that applies to everything. */
 * {
   font-family: 'Iosevka Nerd Font';
-  font-size: 18px;
-  color: @foreground;
+  font-size: 14px;
+  color: @foreground-color;
 }
 
-/** ---------- WayBar instance ---------- */
-/** Style of the background/wrapper of the bar itself. */
+/** Generic button of any section. */
+button {}
+/* ----------------------------- */
+
+/* ---------- WayBar instance ---------- */
+/* Style of the background-color/wrapper of the bar itself. */
 window#waybar {
   background-color: transparent;
 }
 
-/** Style of the bar. */
+/** Style of the bar */
 window#waybar>box {
-  margin: 20px;
-  background-color: @background;
-  border: 1.5px solid @foreground;
+  margin: 10px 10px 0 10px;
+  background-color: @background-color;
   border-radius: 5px;
 }
-/** ------------------------------------- */
+/* ------------------------------------- */
 
-/** Generic button of any section. */
-button {}
+/* ---------- Module containers ---------- */
+.modules-center>widget>*, .modules-right>widget>* {
+  margin: 3px 5px 3px 0;
+  padding: 3px 5px;
+  background-color: @button-color;
+  border-radius: 5px;
+  border: 0.5px solid @foreground-color-translucent;
+}
 
-/** ---------- [hyprland/workspaces] ---------- */
-#workspaces button {}
+.modules-center>widget:last-child {
+  margin-right: 0px;
+}
+/* --------------------------------------- */
+
+/* ---------- Modules (modules.jsonc) ---------- */
+/* [hyprland/workspaces] */
+#workspaces button {
+  margin: 3px 0 3px 5px;
+  padding: 2px 2px 2px 4px;
+  background-color: @button-color;
+  border-radius: 5px;
+  border: 0.5px solid @foreground-color-translucent;
+}
+#workspaces button:hover {
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  transition: none;
+}
 #workspaces button.focused {}
 #workspaces button.active {
-  background-color: @foreground-translucent;
+  background-color: @foreground-color-translucent;
 }
 #workspaces button.urgent {}
-/** ----------------------------------------- */
 
-#custom-power,
-#clock,
-#battery,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#tray,
-#mode,
-#custom-recording {
-  /* border: none;
-  color: #ffffff;
-  padding: 3px 5px;
-  margin: 5px;
-  border-radius: 5px; */
-}
+/* [tray] */
+#tray>.passive {}
+#tray>.needs-attention {}
 
+/* [battery] */
 #battery.charging,
 #battery.plugged {}
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {}
 
-.modules-left>widget:first-child>#workspaces {}
+/* [pulseaudio] */
+#pulseaudio {
+  padding-right: 5px;
+}
 
-.modules-center {}
-
-#tray>.passive {}
-#tray>.needs-attention {}
+/* [custom/power] */
+#custom-power {
+  min-width: 12px;
+  padding-right: 9px;
+  margin-right: 5px;
+}
+/* --------------------------------------- */

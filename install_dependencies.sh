@@ -14,21 +14,24 @@ if [[ "$1" == "--gpu" || "$1" == "-g" ]]; then
   if [[ "$2" == "amd" ]]; then
     yay -S \
       xf86-video-amdgpu \
-      mesa \
-      mesa-utils \
       vulkan-radeon \
-      opencl-amd \
+      opencl-amd
   elif [[ "$2" == "nvidia" ]]; then
     yay -S nvidia
   else
-    echo "Usage: bash install_dependencies.sh --gpu <amd/nvidia>"
-    echo 0
+    echo "Accepted values: amd, nvidia"
+    exit 1
   fi
+else
+  echo "Usage: bash install_dependencies.sh --gpu <amd/nvidia>"
+  exit 0
 fi
 
 # Principal dependencies.
 yay -S \
   base-devel \
+  mesa \
+  mesa-utils \
   wayland \
   qt5-quickcontrols \
   qt6 \
