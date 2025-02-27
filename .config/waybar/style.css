@@ -24,16 +24,14 @@ window#waybar {
 
 /** Style of the bar */
 window#waybar>box {
-  margin: 10px 10px 0 10px;
   background-color: @background-color;
-  border-radius: 5px;
   padding: 5px;
 }
 /* ------------------------------------- */
 
 /* ---------- Module containers ---------- */
 .modules-center>widget>*, .modules-right>widget>* {
-  margin: 3px 10px 3px 0;
+  margin-right: 10px;
   padding: 3px 5px;
   background-color: @button-color;
   border-radius: 5px;
@@ -43,8 +41,10 @@ window#waybar>box {
 
 /* ---------- Modules (modules.jsonc) ---------- */
 /* [hyprland/workspaces] */
+#workspaces {
+}
 #workspaces button {
-  margin: 3px 0 3px 5px;
+  margin-left: 5px;
   padding: 2px 2px 2px 4px;
   background-color: @button-color;
   border-radius: 5px;
@@ -55,6 +55,9 @@ window#waybar>box {
   text-shadow: none;
   background: none;
   transition: none;
+}
+#workspaces button:first-child {
+  margin-left: 0;
 }
 #workspaces button.focused {}
 #workspaces button.active {
@@ -81,6 +84,6 @@ window#waybar>box {
 #custom-power {
   min-width: 12px;
   padding-right: 10px;
-  margin-right: 5px;
+  margin-right: 0;
 }
 /* --------------------------------------- */
