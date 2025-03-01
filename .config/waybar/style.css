@@ -30,7 +30,7 @@ window#waybar>box {
 /* ------------------------------------- */
 
 /* ---------- Module containers ---------- */
-.modules-center>widget>*, .modules-right>widget>* {
+.modules-right>widget>* {
   margin-right: 10px;
   padding: 3px 5px;
   background-color: @button-color;
@@ -41,8 +41,6 @@ window#waybar>box {
 
 /* ---------- Modules (modules.jsonc) ---------- */
 /* [hyprland/workspaces] */
-#workspaces {
-}
 #workspaces button {
   margin-left: 5px;
   padding: 2px 2px 2px 4px;
@@ -66,6 +64,12 @@ window#waybar>box {
 #workspaces button.urgent {}
 
 /* [tray] */
+#tray {
+  padding: 0 10px;
+  border-radius: 10px;
+  margin: 2px 0;
+  border: 0.5 solid @foreground-color-translucent;
+}
 #tray>.passive {}
 #tray>.needs-attention {}
 

@@ -1,19 +1,16 @@
 {
   // [modules-center]
-  "cpu": {
-      "format": "{usage}%  "
-  },
-  "memory": {
-      "format": "{}%  "
-  },
-  "hyprland/language": {
-    "format-pt": "pt-BR",
-    "format-en": "en-US"
+  "tray": {
+      "icon-size": 15,
+      "spacing": 5
   },
   // [modules-right]
-  "tray": {
-      "icon-size": 18,
-      "spacing": 10
+  "custom/recording": {
+      "exec": "~/.config/waybar/scripts/recording_status.sh",
+      "interval": 1,
+      "format": "{}",
+      "on-click": "pkill wf-recorder",
+      "tooltip": "Recording in progress..."
   },
   "custom/media": {
       "format": "{icon} {}",
@@ -27,12 +24,15 @@
       "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
       // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
   },
-  "custom/recording": {
-      "exec": "~/.config/waybar/scripts/recording_status.sh",
-      "interval": 1,
-      "format": "{}",
-      "on-click": "pkill wf-recorder",
-      "tooltip": "Recording in progress..."
+  "cpu": {
+      "format": "{usage}%  "
+  },
+  "memory": {
+      "format": "{}%  "
+  },
+  "hyprland/language": {
+    "format-pt": "pt-BR",
+    "format-en": "en-US"
   },
   "network": {
       // "interface": "wlp2*", // (Optional) To force the use of this interface
