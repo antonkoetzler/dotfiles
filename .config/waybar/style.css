@@ -15,12 +15,34 @@
 
 /** Generic button of any section. */
 button {}
+
+/** Context menu (https://man.archlinux.org/man/extra/waybar/waybar-menu.5.en) */
+menu {
+  padding: 0;
+  background-color: @background-color;
+  color: @foreground-color;
+  border-radius: 10px;
+}
+menuitem:hover {
+  background: @foreground-color-translucent;
+}
+menuitem:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+menuitem:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
 /* ----------------------------- */
 
 /* ---------- WayBar instance ---------- */
 /* Style of the background-color/wrapper of the bar itself. */
 window#waybar {
   background-color: transparent;
+}
+window#menu {
+  background-color: pink;
 }
 
 /** Style of the bar */
@@ -71,27 +93,10 @@ window#waybar>box {
   padding: 0 10px;
   border-radius: 10px;
   margin: 2px 0;
-  border: 0.5 solid @foreground-color-translucent;
+  border: 0.5px solid @foreground-color-translucent;
 }
 #tray>.passive {}
 #tray>.needs-attention {}
-#tray menu {
-  padding: 0;
-  background-color: @background-color;
-  color: @foreground-color;
-  border-radius: 10px;
-}
-#tray menu > *:hover {
-  background: @foreground-color-translucent;
-}
-#tray menu > *:first-child {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-#tray menu > *:last-child {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
 
 /* [battery] */
 #battery.charging,
@@ -109,5 +114,8 @@ window#waybar>box {
   min-width: 12px;
   padding-right: 10px;
   margin-right: 0;
+}
+#custom-power menu {
+  background-color: pink;
 }
 /* --------------------------------------- */
