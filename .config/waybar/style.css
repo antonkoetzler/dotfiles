@@ -2,6 +2,7 @@
 @define-color background-color rgb(60, 60, 60);
 @define-color foreground-color rgb(255, 255, 255);
 @define-color foreground-color-translucent rgba(255, 255, 255, 0.3);
+@define-color background-color-translucent rgba(60, 60, 60, 0.3);
 /* ---------------------------- */
 
 /* ---------- Globals ---------- */
@@ -74,6 +75,23 @@ window#waybar>box {
 }
 #tray>.passive {}
 #tray>.needs-attention {}
+#tray menu {
+  padding: 0;
+  background-color: @background-color;
+  color: @foreground-color;
+  border-radius: 10px;
+}
+#tray menu > *:hover {
+  background: @foreground-color-translucent;
+}
+#tray menu > *:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#tray menu > *:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
 
 /* [battery] */
 #battery.charging,
