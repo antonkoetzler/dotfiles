@@ -1,5 +1,6 @@
 /* ---------- Colors ---------- */
-@define-color background-color rgb(60, 60, 60);
+/* @define-color background-color rgb(60, 60, 60); */
+@define-color background-color rgba(1,22,39,255);
 @define-color foreground-color rgb(255, 255, 255);
 @define-color foreground-color-translucent rgba(255, 255, 255, 0.3);
 @define-color background-color-translucent rgba(60, 60, 60, 0.3);
@@ -41,9 +42,6 @@ menuitem:last-child {
 window#waybar {
   background-color: transparent;
 }
-window#menu {
-  background-color: pink;
-}
 
 /** Style of the bar */
 window#waybar>box {
@@ -51,6 +49,7 @@ window#waybar>box {
   padding: 5px;
   margin: 10px 10px 0 10px;
   border-radius: 5px;
+  border: 0.5px solid @foreground-color-translucent;
 }
 /* ------------------------------------- */
 
@@ -60,7 +59,7 @@ window#waybar>box {
   padding: 3px 5px;
   background-color: @button-color;
   border-radius: 5px;
-  border: 0.5px solid @foreground-color-translucent;
+  border: 1px solid @foreground-color-translucent;
 }
 /* --------------------------------------- */
 
