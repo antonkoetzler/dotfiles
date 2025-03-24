@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# GPU drivers.
+if [[ "$1" == "--gpu" || "$1" == "-g" ]]; then
+  if [[ "$2" != "amd" && "$2" != "nvidia" ]]; then
+    echo "Accepted values: amd, nvidia"
+    exit 1
+  fi
+else
+  echo "Usage: bash install_dependencies.sh --gpu <amd/nvidia>"
+  exit 0
+fi
+
 # Install yay.
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -9,27 +20,19 @@ rm -rf yay
 yay -Syyu
 yay -Syu
 
-# GPU drivers.
-if [[ "$1" == "--gpu" || "$1" == "-g" ]]; then
-  if [[ "$2" == "amd" ]]; then
-    yay -Rns nvidia
-    yay -S \
-      xf86-video-amdgpu \
-      vulkan-radeon \
-      opencl-amd
-  elif [[ "$2" == "nvidia" ]]; then
-    yay -Rns \
-      xf86-video-amdgpu \
-      vulkan-radeon \
-      opencl-amd
-    yay -S nvidia
-  else
-    echo "Accepted values: amd, nvidia"
-    exit 1
-  fi
-else
-  echo "Usage: bash install_dependencies.sh --gpu <amd/nvidia>"
-  exit 0
+# Install GPU packages.
+if [[ "$2" == "amd" ]]; then
+  yay -Rns nvidia
+  yay -S \
+    xf86-video-amdgpu \
+    vulkan-radeon \
+    opencl-amd
+elif [[ "$2" == "nvidia" ]]; then
+  yay -Rns \
+    xf86-video-amdgpu \
+    vulkan-radeon \
+    opencl-amd
+  yay -S nvidia
 fi
 
 # Principal dependencies.
