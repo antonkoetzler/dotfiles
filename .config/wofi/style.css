@@ -1,5 +1,5 @@
 /* Variables */
-@define-color primary-color black;
+@define-color primary-color rgb(1, 22, 39);
 @define-color on-primary-color rgb(255, 255, 255);
 
 window {

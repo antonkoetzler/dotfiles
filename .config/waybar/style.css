@@ -1,6 +1,5 @@
 /* ---------- Colors ---------- */
-/* @define-color background-color rgb(60, 60, 60); */
-@define-color background-color rgba(1,22,39,255);
+@define-color background-color rgb(1, 22, 39);
 @define-color foreground-color rgb(255, 255, 255);
 @define-color foreground-color-translucent rgba(255, 255, 255, 0.3);
 @define-color background-color-translucent rgba(60, 60, 60, 0.3);
