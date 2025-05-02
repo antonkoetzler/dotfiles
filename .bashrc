@@ -15,6 +15,7 @@ PS1='\[\033[1;36m\]\u \[\033[1;33m\]\w \[\033[0m\]$ '
 export PATH="$PATH:/home/$USER/.local/bin"      # Enable this while installing FVM.
 export PATH="$PATH:/home/$USER/fvm/default/bin" # Enable this while installing FVM.
 export CHROME_EXECUTABLE="brave"
+alias flutter="fvm flutter"
 
 # Git completion on tab key
 source /usr/share/git/completion/git-completion.bash
@@ -22,12 +23,11 @@ source /usr/share/git/completion/git-completion.bash
 # Make opening applications with WSL work.
 # export DISPLAY=$(ip route | awk "/default/ {print \$3}"):0
 
-export PATH="/home/flqn/.config/herd-lite/bin:$PATH"
-export PHP_INI_SCAN_DIR="/home/flqn/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
-
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Sail (Laravel)
+# PHP/Laravel
+export PATH="/home/flqn/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/flqn/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
