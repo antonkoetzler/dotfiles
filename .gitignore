@@ -3,6 +3,7 @@
 !README.md
 !.bashrc
 !.zshrc
+!.aerospace.toml
 !.config/
 !.config/**
 !scripts/
