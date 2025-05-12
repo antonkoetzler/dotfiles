@@ -24,12 +24,12 @@
 
 ## Known problems and fixes
 
-## Linux
+### Linux
 
 1. Brave is super slow when focused: Go to `brave://flags` and set `Preferred Ozone platform` to `Wayland`.
 
 ## TODO
 
-## Linux
+### Linux
 
 1. Add the power daemon profiles found in the default wayland config so i can have low power mode on my laptop.
