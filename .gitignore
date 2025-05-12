@@ -5,5 +5,7 @@
 !.zshrc
 !.config/
 !.config/**
+!scripts/
+!scripts/**
 !install_dependencies.sh
 !.markdownlint.yaml
