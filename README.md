@@ -1,4 +1,4 @@
-# Dotfiles for (Arch) Linux & macOS
+# My dotfiles for (Arch) Linux & macOS
 
 ## Common and OS-specific files
 
@@ -8,7 +8,7 @@
 1. `scripts/*`: Personal scripts
 1. `.markdownlint.yaml`: This is for [my Neovim config](http://github.com/antonkoetzler/nvim-config)
 
-### (Arch) Linux
+### Linux
 
 1. `.config/hypr`: Hyprland
 1. `.config/waybar`: Waybar
@@ -24,8 +24,12 @@
 
 ## Known problems and fixes
 
-- (Arch) Linux: Brave is super slow when focused: Go to `brave://flags` and set `Preferred Ozone platform` to `Wayland`.
+## Linux
+
+1. Brave is super slow when focused: Go to `brave://flags` and set `Preferred Ozone platform` to `Wayland`.
 
 ## TODO
 
-- (Arch) Linux: Add the power daemon profiles found in the default wayland config so i can have low power mode on my laptop.
+## Linux
+
+1. Add the power daemon profiles found in the default wayland config so i can have low power mode on my laptop.
