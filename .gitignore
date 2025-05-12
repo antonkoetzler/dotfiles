@@ -2,6 +2,7 @@
 !.gitignore
 !README.md
 !.bashrc
+!.zshrc
 !.config/
 !.config/**
 !install_dependencies.sh
