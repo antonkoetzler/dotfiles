@@ -37,8 +37,11 @@ fi
 
 # Maven commands.
 cd ~/git/PrologWebService
-mvn clean install -DskipTests
-mvn spring-boot:run -Dspring-boot.run.profiles=dev
+export JAVA_HOME=/opt/homebrew/opt/openjdk@17
+# mvn clean install -DskipTests
+# mvn spring-boot:run -Dspring-boot.run.profiles=dev -DskipTests
+mvn clean install -Dmaven.test.skip=true
+mvn spring-boot:run -Dspring-boot.run.profiles=dev -Dmaven.test.skip=true
 
 # Make terminal cd to ~/git/PrologWebService after the script runs
 $SOURCE

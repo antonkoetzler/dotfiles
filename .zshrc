@@ -22,10 +22,11 @@ alias flutter='fvm flutter'
 
 # JDK
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+# export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 
 # JAVA_HOME
-export JAVA_HOME=/opt/homebrew/opt/openjdk@17
+# export JAVA_HOME=/opt/homebrew/opt/openjdk@17
+export JAVA_HOME=/opt/homebrew/opt/openjdk@21
 
 # Maven
 export PATH="/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3/bin:$PATH"
@@ -33,3 +34,6 @@ export PATH="/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3/b
 # Prolog local API script aliases
 alias run_local_prolog_api="bash $HOME/scripts/run_local_prolog_api.sh"
 alias setup_local_prolog_api="bash $HOME/scripts/setup_local_prolog_api.sh"
+
+# Helix
+export PATH="$PATH:$HOME/helix-25.01.1-x86_64-macos:$PATH"
