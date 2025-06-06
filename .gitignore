@@ -2,7 +2,11 @@
 !.gitignore
 !README.md
 !.bashrc
+!.zshrc
+!.aerospace.toml
 !.config/
 !.config/**
+!scripts/
+!scripts/**
 !install_dependencies.sh
 !.markdownlint.yaml

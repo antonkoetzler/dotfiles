@@ -1,8 +1,12 @@
 # Color scheme.
 include bamboo.conf
 # include kanagawa.conf
-# include moonfly.conf
+# include moonfly
 # include nightfly.conf
+
+# Default font.
+font_family "Iosevka Nerd Font Mono"
+font_style Regular
 
 # Default font size.
 font_size 16.0 
@@ -32,11 +36,3 @@ map ctrl+shift+left move_tab_backward
 map ctrl+shift+right move_tab_forward
 map ctrl+shift+h move_tab_backward
 map ctrl+shift+l move_tab_forward
-
-
-# BEGIN_KITTY_FONTS
-font_family      family="Iosevka Nerd Font Mono"
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
-# END_KITTY_FONTS
