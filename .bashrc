@@ -15,7 +15,9 @@ PS1='\[\033[1;36m\]\u \[\033[1;33m\]\w \[\033[0m\]$ '
 export PATH="$PATH:/home/$USER/.local/bin"      # Enable this while installing FVM.
 export PATH="$PATH:/home/$USER/fvm/default/bin" # Enable this while installing FVM.
 export CHROME_EXECUTABLE="brave"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 alias flutter="fvm flutter"
+alias dart="fvm dart"
 
 # Git completion on tab key
 source /usr/share/git/completion/git-completion.bash
