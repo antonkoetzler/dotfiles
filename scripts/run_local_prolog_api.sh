@@ -4,12 +4,24 @@
 #
 # Run setup_local_prolog_api.sh before this script.
 
-# Grab the BD_NAME from the result of setup_local_prolog_api.sh.
-read -p "BD_NAME from setup_local_prolog_api.sh result: " bd_name
+# Default value for bd_name
+bd_name=""
+
+# Parse arguments
+while [ "$#" -gt 0 ]; do
+    case "$1" in
+        --name)
+            bd_name="$2"
+            shift 2
+            ;;
+        *)
+            echo "Unknown option: $1"
+            exit 1
+            ;;
+    esac
+done
 
 # Path to application-dev.yml.
-#
-# We need to update line 5 of this file.
 file="$HOME/git/PrologWebService/src/main/resources/application-dev.yml"
 
 # Check if the file exists
@@ -18,30 +30,28 @@ if [ ! -f "$file" ]; then
     exit 1
 fi
 
-# This updates line 5 of $file.
-#
-# Use different sed syntax based on OS type (macOS vs Linux)
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    # macOS requires an empty string after -i
-    sed -i '' "s/name: \"\${DB_NAME:[^}]*}\"/name: \"\${DB_NAME:$bd_name}\"/" "$file"
+# Only update the file if bd_name is provided
+if [ -n "$bd_name" ]; then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        sed -i '' "s/name: \"\${DB_NAME:[^}]*}\"/name: \"\${DB_NAME:$bd_name}\"/" "$file"
+    else
+        sed -i "s/name: \"\${DB_NAME:[^}]*}\"/name: \"\${DB_NAME:$bd_name}\"/" "$file"
+    fi
+
+    if [ $? -ne 0 ]; then
+        echo "Error updating $file."
+        exit 1
+    fi
 else
-    # Linux version
-    sed -i "s/name: \"\${DB_NAME:[^}]*}\"/name: \"\${DB_NAME:$bd_name}\"/" "$file"
+    echo "No --name provided; skipping file update."
 fi
 
-# Checking if updating the process was done successfully.
-if [ $? -ne 0 ]; then
-    echo "Error updating $file."
-    exit 1
-fi
-
-# Maven commands.
-cd ~/git/PrologWebService
+# Maven commands
+cd ~/git/PrologWebService || exit 1
 export JAVA_HOME=/opt/homebrew/opt/openjdk@17
-# mvn clean install -DskipTests
-# mvn spring-boot:run -Dspring-boot.run.profiles=dev -DskipTests
 mvn clean install -Dmaven.test.skip=true
+# mvn spring-boot:run -Dspring-boot.run.profiles=dev
 mvn spring-boot:run -Dspring-boot.run.profiles=dev -Dmaven.test.skip=true
 
-# Make terminal cd to ~/git/PrologWebService after the script runs
+# Final shell behavior
 $SOURCE

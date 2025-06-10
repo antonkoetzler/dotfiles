@@ -13,7 +13,9 @@ PS1='%F{cyan}%n %F{yellow}%~ %f$ '
 export PATH="$PATH:$HOME/.local/bin"      # Enable this while installing FVM.
 export PATH="$PATH:$HOME/fvm/default/bin" # Enable this while installing FVM.
 export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 alias flutter='fvm flutter'
+alias dart='fvm dart'
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
@@ -21,12 +23,12 @@ alias flutter='fvm flutter'
 ## [/Completion]
 
 # JDK
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+# export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 # export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 
 # JAVA_HOME
 # export JAVA_HOME=/opt/homebrew/opt/openjdk@17
-export JAVA_HOME=/opt/homebrew/opt/openjdk@21
+# export JAVA_HOME=/opt/homebrew/opt/openjdk@21
 
 # Maven
 export PATH="/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3/bin:$PATH"
