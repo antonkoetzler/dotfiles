@@ -39,3 +39,4 @@ alias setup_local_prolog_api="bash $HOME/scripts/setup_local_prolog_api.sh"
 
 # Helix
 export PATH="$PATH:$HOME/helix-25.01.1-x86_64-macos:$PATH"
+export PATH="/Library/TeX/texbin:$PATH"
