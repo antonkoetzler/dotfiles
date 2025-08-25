@@ -33,3 +33,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="/home/flqn/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/flqn/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+
+# LaTeX
+export PATH="$PATH:/usr/bin"
