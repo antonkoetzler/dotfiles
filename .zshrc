@@ -46,3 +46,14 @@ export PATH=$PATH:~/Library/Android/sdk/platform-tools
 
 # Added by Windsurf
 export PATH="/Users/flqn/.codeium/windsurf/bin:$PATH"
+
+# Enable completion system
+autoload -Uz compinit
+compinit
+
+# Enable zsh completion system
+autoload -Uz compinit
+compinit
+
+# Git completion
+fpath=(~/.git-completion.zsh $fpath)

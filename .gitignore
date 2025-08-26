@@ -10,3 +10,4 @@
 !scripts/**
 !install_dependencies.sh
 !.markdownlint.yaml
+!.git-completion.zshrc
