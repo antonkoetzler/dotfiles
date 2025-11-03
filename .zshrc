@@ -22,24 +22,8 @@ alias dart='fvm dart'
 [[ -f /Users/flqn/.dart-cli-completion/zsh-config.zsh ]] && . /Users/flqn/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
-# JDK
-# export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-# export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
-
-# JAVA_HOME
-# export JAVA_HOME=/opt/homebrew/opt/openjdk@17
-# export JAVA_HOME=/opt/homebrew/opt/openjdk@21
-
 # Maven
 export PATH="/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3/bin:$PATH"
-
-# Prolog local API script aliases
-alias run_local_prolog_api="bash $HOME/scripts/run_local_prolog_api.sh"
-alias setup_local_prolog_api="bash $HOME/scripts/setup_local_prolog_api.sh"
-
-# Helix
-export PATH="$PATH:$HOME/helix-25.01.1-x86_64-macos:$PATH"
-export PATH="/Library/TeX/texbin:$PATH"
 
 # adb command
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
@@ -51,9 +35,9 @@ export PATH="/Users/flqn/.codeium/windsurf/bin:$PATH"
 autoload -Uz compinit
 compinit
 
-# Enable zsh completion system
-autoload -Uz compinit
-compinit
-
 # Git completion
 fpath=(~/.git-completion.zsh $fpath)
+
+# jenv initialization
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"

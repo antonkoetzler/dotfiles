@@ -49,7 +49,7 @@ fi
 # Maven commands
 cd ~/git/PrologWebService || exit 1
 export JAVA_HOME=/opt/homebrew/opt/openjdk@17
-mvn clean install -Dmaven.test.skip=true
+# mvn clean install -Dmaven.test.skip=true
 # mvn spring-boot:run -Dspring-boot.run.profiles=dev
 mvn spring-boot:run -Dspring-boot.run.profiles=dev -Dmaven.test.skip=true
 
