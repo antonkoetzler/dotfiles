@@ -36,6 +36,13 @@ fi
 cd "$DOTDIR"
 
 # ----------------------------
+# Safety: reset repo to remote to prevent accidental adoption of system files
+# ----------------------------
+git fetch origin
+git reset --hard origin/main
+git clean -fd
+
+# ----------------------------
 # Confirm destructive stow operation
 # ----------------------------
 echo "WARNING: This will overwrite existing dotfiles with repo versions"

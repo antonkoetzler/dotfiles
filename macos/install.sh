@@ -35,9 +35,16 @@ fi
 cd "$DOTDIR"
 
 # ----------------------------
+# Safety: reset repo to remote to prevent accidental adoption of system files
+# ----------------------------
+git fetch origin
+git reset --hard origin/main
+git clean -fd
+
+# ----------------------------
 # Confirm destructive stow operation
 # ----------------------------
-echo "WARNING: This will replace conflicting dotfiles using stow --adopt"
+echo "WARNING: This will overwrite existing dotfiles with repo versions"
 read -p "Continue? (y/N): " a
 [[ "$a" =~ ^[Yy]$ ]] || exit 0
 
@@ -47,7 +54,7 @@ read -p "Continue? (y/N): " a
 stow -D common macos 2>/dev/null || true
 
 # ----------------------------
-# Adopt existing files and create symlinks
+# Stow repo files into home directory
 # ----------------------------
-stow --adopt common macos
+stow common macos
 
