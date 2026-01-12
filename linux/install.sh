@@ -1,39 +1,34 @@
 #!/bin/bash
 #
-# Linux installation script
+# Linux installation script.
+#
+# This script assumes you've already installed hyprland, GPU drivers, etc.
+#
+# This just installs extra shit that I use in my day-to-day.
+
+# Install yay
+if ! command -v yay >/dev/null 2>&1; then
+  sudo pacman -S --needed --noconfirm base-devel git
+  git clone https://aur.archlinux.org/yay.git /tmp/yay && (cd /tmp/yay && makepkg -si --noconfirm)
+fi
 
 # Principal dependencies.
 yay -S \
-  base-devel \
-  mesa \
-  mesa-utils \
-  wayland \
-  qt5-quickcontrols \
-  qt6 \
-  sddm \
-  cmake \
-  meson \
-  cpio \
-  pkg-config \
-  hyprland \
   hyprpaper \
   hyprlock \
   hypridle \
-  xdg-desktop-portal-hyprland \
-  xdg-desktop-portal-kde \
   waybar \
   wofi \
   otf-font-awesome \
   ttf-iosevka-nerd \
   kitty \
-  brave-browser \
+  brave-bin \
   dolphin \
   grim \
   slurp \
   wf-recorder \
   ntfs-3g \
   udiskie \
-  network-manager \
   brightnessctl \
   gnome-disk-utility \
   git-completion \
