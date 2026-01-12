@@ -46,7 +46,7 @@ stow common linux
 # Install packages.
 yay -S --noconfirm \
   meson cpio cmake hyprpaper hyprlock hypridle waybar wofi \
-  otf-font-awesome ttf-iosevka-nerd kitty brave-bin dolphin \
+  otf-font-awesome ttf-iosevka-nerd kitty brave-bin thunar \
   grim slurp wf-recorder ntfs-3g udiskie brightnessctl \
   gnome-disk-utility git-completion ripgrep go npm postgresql
 
