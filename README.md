@@ -1,4 +1,4 @@
-# My dotfiles for (Arch) Linux & macOS
+# My dotfiles for Arch Linux & macOS
 
 ## One liners
 
