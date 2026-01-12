@@ -20,12 +20,15 @@ fi
 brew install git stow
 
 # ----------------------------
-# Clone or update dotfiles repo
+# Clone or reset dotfiles repo
 # ----------------------------
 if [ ! -d "$DOTDIR/.git" ]; then
   git clone "$REPO_URL" "$DOTDIR"
 else
   cd "$DOTDIR"
+  git fetch origin
+  git reset --hard origin/main
+  git clean -fd
   git pull
 fi
 
@@ -33,13 +36,6 @@ fi
 # Enter dotfiles directory
 # ----------------------------
 cd "$DOTDIR"
-
-# ----------------------------
-# Safety: reset repo to remote to prevent accidental adoption of system files
-# ----------------------------
-git fetch origin
-git reset --hard origin/main
-git clean -fd
 
 # ----------------------------
 # Confirm destructive stow operation
