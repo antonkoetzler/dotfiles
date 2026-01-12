@@ -4,11 +4,15 @@
 
 ### Linux
 
-`git clone https://github.com/antonkoetzler/dotfiles ~/.dotfiles && cd ~/.dotfiles && sudo pacman -S --needed stow && stow common linux && chmod +x linux/install.sh && ./linux/install.sh`
+```bash
+curl -fsSL https://raw.githubusercontent.com/antonkoetzler/dotfiles/main/linux/install.sh | bash
+```
 
 ### MacOS
 
-`git clone https://github.com/antonkoetzler/dotfiles ~/.dotfiles && cd ~/.dotfiles && brew install stow && stow common macos`
+```bash
+curl -fsSL https://raw.githubusercontent.com/antonkoetzler/dotfiles/main/macos/install.sh | bash
+```
 
 ## Common and OS-specific files
 
