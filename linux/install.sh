@@ -45,15 +45,14 @@ stow common linux
 
 # Install packages.
 yay -S --noconfirm \
-  hyprpaper hyprlock hypridle waybar wofi \
+  meson cpio cmake hyprpaper hyprlock hypridle waybar wofi \
   otf-font-awesome ttf-iosevka-nerd kitty brave-bin dolphin \
   grim slurp wf-recorder ntfs-3g udiskie brightnessctl \
   gnome-disk-utility git-completion ripgrep go npm postgresql
 
 # Reload Hyprland to apply new config.
-if pgrep -x hyprland >/dev/null; then
-  hyprctl reload
-fi
+hyprpm update
+hyprctl reload
 
 # Prompt for optional Neovim setup.
 read -p "Install https://github.com/antonkoetzler/nvim-config? THIS WILL DELETE YOUR NEOVIM CONFIGURATION. (y/N): " -r answer < /dev/tty
