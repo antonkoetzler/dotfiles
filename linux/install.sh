@@ -1,39 +1,6 @@
 #!/bin/bash
-
-# GPU drivers.
-if [[ "$1" == "--gpu" || "$1" == "-g" ]]; then
-  if [[ "$2" != "amd" && "$2" != "nvidia" ]]; then
-    echo "Accepted values: amd, nvidia"
-    exit 1
-  fi
-else
-  echo "Usage: bash install_dependencies.sh --gpu <amd/nvidia>"
-  exit 0
-fi
-
-# Install yay.
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd ..
-rm -rf yay
-yay -Syyu
-yay -Syu
-
-# Install GPU packages.
-if [[ "$2" == "amd" ]]; then
-  yay -Rns nvidia
-  yay -S \
-    xf86-video-amdgpu \
-    vulkan-radeon \
-    opencl-amd
-elif [[ "$2" == "nvidia" ]]; then
-  yay -Rns \
-    xf86-video-amdgpu \
-    vulkan-radeon \
-    opencl-amd
-  yay -S nvidia
-fi
+#
+# Linux installation script
 
 # Principal dependencies.
 yay -S \
@@ -74,13 +41,6 @@ yay -S \
   go \
   npm \
   postgresql
-
-# Ensure xdg-desktop-portal-hyprland works.
-dbus-update-activation-environment --systemd --all
-
-# Enabling services in systemd.
-sudo systemctl enable sddm
-sudo systemctl enable NetworkManager
 
 # Prompting if https://github.com/antonkoetzler/nvim-config should also be setup.
 read -p "Install https://github.com/antonkoetzler/nvim-config? THIS WILL DELETE YOUR NEOVIM CONFIGURATION. (Y/n): " -r answer
