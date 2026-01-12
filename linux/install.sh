@@ -56,7 +56,7 @@ if pgrep -x hyprland >/dev/null; then
 fi
 
 # Prompt for optional Neovim setup.
-read -p "Install https://github.com/antonkoetzler/nvim-config? THIS WILL DELETE YOUR NEOVIM CONFIGURATION. (Y/n): " -r answer < /dev/tty
+read -p "Install https://github.com/antonkoetzler/nvim-config? THIS WILL DELETE YOUR NEOVIM CONFIGURATION. (y/N): " -r answer < /dev/tty
 answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
 if [[ "$answer" == "y" ]]; then
   yay -S --noconfirm neovim
