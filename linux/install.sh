@@ -38,7 +38,7 @@ cd "$DOTDIR"
 # ----------------------------
 # Confirm destructive stow operation
 # ----------------------------
-echo "WARNING: This will replace conflicting dotfiles using stow --adopt"
+echo "WARNING: This will overwrite existing dotfiles with repo versions"
 read -p "Continue? (y/N): " a
 [[ "$a" =~ ^[Yy]$ ]] || exit 0
 
@@ -48,9 +48,15 @@ read -p "Continue? (y/N): " a
 stow -D common linux 2>/dev/null || true
 
 # ----------------------------
-# Adopt existing files and create symlinks
+# Remove conflicting files (system → repo direction)
 # ----------------------------
-stow --adopt common linux
+rm -f "$HOME/.bashrc"
+rm -rf "$HOME/.config/hypr"
+
+# ----------------------------
+# Stow repo files into home directory
+# ----------------------------
+stow common linux
 
 # ----------------------------
 # Install packages
