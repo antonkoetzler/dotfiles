@@ -52,7 +52,7 @@ function Invoke-Stow {
                     Write-Host "[dry-run] Link: $dest -> $src" -ForegroundColor Yellow
                 } else {
                     if (Test-Path $dest -PathType Any) { Remove-Item $dest -Force -Recurse }
-                    New-Item -ItemType SymbolicLink -Path $dest -Target $src | Out-Null
+                    cmd /c "mklink `"$dest`" `"$src`"" | Out-Null
                 }
             }
         }
@@ -63,15 +63,14 @@ function Invoke-Stow {
 Write-Step "Checking symlink support..."
 $testSrc  = [System.IO.Path]::GetTempFileName()
 $testLink = "$env:TEMP\dotfiles_symlink_test"
-try {
-    New-Item -ItemType SymbolicLink -Path $testLink -Target $testSrc -ErrorAction Stop | Out-Null
-    Remove-Item $testLink -Force
-} catch {
+cmd /c "mklink `"$testLink`" `"$testSrc`"" | Out-Null
+if ($LASTEXITCODE -ne 0) {
     Write-Host "ERROR: Cannot create symlinks.`nEnable Developer Mode: Settings -> System -> For developers." -ForegroundColor Red
-    exit 1
-} finally {
     Remove-Item $testSrc -Force -ErrorAction SilentlyContinue
+    exit 1
 }
+Remove-Item $testLink -Force -ErrorAction SilentlyContinue
+Remove-Item $testSrc  -Force -ErrorAction SilentlyContinue
 
 # Install Scoop (user-space package manager).
 if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
@@ -116,15 +115,16 @@ Invoke-Stow -PackagePath "$DOTDIR\common" -TargetPath $HOME -Unstow
 Invoke-Stow -PackagePath "$DOTDIR\common" -TargetPath $HOME
 
 # On Windows, Alacritty reads config from %APPDATA%\alacritty\ (not ~/.config/alacritty/).
-# Create a directory symlink so both paths resolve to the same stowed config.
+# Use a junction (/j) — requires no elevation and no Developer Mode — so Alacritty
+# finds the stowed config at both paths.
 $alacrittyAppData = "$env:APPDATA\alacritty"
 $alacrittyStowed  = "$HOME\.config\alacritty"
 if (-not (Test-Path $alacrittyAppData)) {
     Write-Step "Linking Alacritty config into APPDATA..."
     if ($DryRun) {
-        Write-Host "[dry-run] Link: $alacrittyAppData -> $alacrittyStowed" -ForegroundColor Yellow
+        Write-Host "[dry-run] Junction: $alacrittyAppData -> $alacrittyStowed" -ForegroundColor Yellow
     } else {
-        New-Item -ItemType SymbolicLink -Path $alacrittyAppData -Target $alacrittyStowed | Out-Null
+        cmd /c "mklink /j `"$alacrittyAppData`" `"$alacrittyStowed`"" | Out-Null
     }
 }
 
