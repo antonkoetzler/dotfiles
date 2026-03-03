@@ -1,43 +1,28 @@
-# Automatic MacOS aliases
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
+# PS1
+PS1='%F{cyan}%n %F{yellow}%~ %f$ '
 
-# Basic aliases
+# Bun
+export BUN_INSTALL="$HOME/.bun" 
+export PATH="$BUN_INSTALL/bin:$PATH" 
+export PATH="$HOME/.local/bin:$PATH"
+
+# Basis aliases
 alias ls='ls --color=auto'
 alias ll='ls -al'
 alias grep='grep --color=auto'
-PS1='%F{cyan}%n %F{yellow}%~ %f$ '
 
-## Flutter aliases
-# export PATH="$PATH:$HOME/flutter/bin"
-export PATH="$PATH:$HOME/.local/bin"      # Enable this while installing FVM.
-export PATH="$PATH:$HOME/fvm/default/bin" # Enable this while installing FVM.
+# OpenClaw Completion
+autoload -Uz compinit && compinit 
+source "/Users/flqn/.openclaw/completions/openclaw.zsh"
+
+# FVM & Flutter
+export PATH="/Users/flqn/fvm/bin:$PATH"
+export PATH="/Users/flqn/fvm/default/bin:$PATH"
 export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-alias flutter='fvm flutter'
-alias dart='fvm dart'
 
-## [Completion]
-## Completion scripts setup. Remove the following line to uninstall
-[[ -f /Users/flqn/.dart-cli-completion/zsh-config.zsh ]] && . /Users/flqn/.dart-cli-completion/zsh-config.zsh || true
-## [/Completion]
-
-# Maven
-export PATH="/Applications/IntelliJ IDEA.app/Contents/plugins/maven/lib/maven3/bin:$PATH"
+# tmux
+tmux-create() { tmux new -s "$1" }
+tmux-attach() { tmux attach -t "$1"; }
 
 # adb command
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
-
-# Added by Windsurf
-export PATH="/Users/flqn/.codeium/windsurf/bin:$PATH"
-
-# Enable completion system
-autoload -Uz compinit
-compinit
-
-# Git completion
-fpath=(~/.git-completion.zsh $fpath)
-
-# jenv initialization
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"

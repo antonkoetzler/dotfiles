@@ -1,21 +1,40 @@
 #!/bin/bash
 set -e
 
+# Parse flags.
+DRY_RUN=false
+for arg in "$@"; do
+  [[ "$arg" == "--dry-run" || "$arg" == "-n" ]] && DRY_RUN=true
+done
+
+# Wrap commands: echo in dry-run, execute otherwise.
+run() { $DRY_RUN && { echo "[dry-run] $*"; return 0; }; "$@"; }
+
 # Config.
-REPO_URL="https://github.com/antonkoetzler/dotfiles"
 DOTDIR="$HOME/.dotfiles"
+STOW_PACKAGES="common macos"
+CONFLICTING_FILES=(
+  "$HOME/.zshrc"
+  "$HOME/.aerospace.toml"
+  "$HOME/.tmux.conf"
+  "$HOME/.config/alacritty/alacritty.toml"
+  "$HOME/.markdownlint.yaml"
+)
+
+install_neovim_pkg() { run brew install neovim; }
 
 # Install Homebrew if missing.
 if ! command -v brew >/dev/null 2>&1; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# Base dependencies.
+# Base dependencies (needed even in dry-run for the stow simulation).
 brew install git stow
 
-# Clone or reset dotfiles repo.
+# Clone or reset dotfiles repo via HTTPS (works for everyone).
+# Push remote is set to SSH so the owner can push with git directly.
 if [ ! -d "$DOTDIR/.git" ]; then
-  git clone "$REPO_URL" "$DOTDIR"
+  git clone "https://github.com/antonkoetzler/dotfiles" "$DOTDIR"
 else
   cd "$DOTDIR"
   git fetch origin
@@ -23,26 +42,15 @@ else
   git clean -fd
   git pull
 fi
+git -C "$DOTDIR" remote set-url --push origin "git@github.com:antonkoetzler/dotfiles.git"
 
-# Enter dotfiles directory.
-cd "$DOTDIR"
+# Load shared functions.
+source "$DOTDIR/install_common.sh"
 
-# Confirm destructive stow operation.
-echo "WARNING: This will overwrite existing dotfiles with repo versions"
-read -p "Continue? (y/N): " a < /dev/tty
-[[ "$a" =~ ^[Yy]$ ]] || exit 0
+# Confirm, stow, clone themes.
+confirm_stow
+do_stow
+clone_alacritty_themes
 
-# Remove previously stowed packages (if any).
-stow -D common macos 2>/dev/null || true
-
-# Stow repo files into home directory.
-stow common macos
-
-# Prompt for optional Neovim setup.
-read -p "Install https://github.com/antonkoetzler/nvim-config? THIS WILL DELETE YOUR NEOVIM CONFIGURATION. (y/N): " -r answer < /dev/tty
-answer=$(echo "$answer" | tr '[:upper:]' '[:lower:]')
-if [[ "$answer" == "y" ]]; then
-  yay -S --noconfirm neovim
-  rm -rf "$HOME/.config/nvim"
-  git clone https://github.com/antonkoetzler/nvim-config "$HOME/.config/nvim"
-fi
+# Optional Neovim.
+prompt_nvim
