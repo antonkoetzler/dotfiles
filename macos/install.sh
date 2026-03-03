@@ -18,7 +18,7 @@ CONFLICTING_FILES=(
   "$HOME/.zshrc"
   "$HOME/.aerospace.toml"
   "$HOME/.tmux.conf"
-  "$HOME/.config/alacritty/alacritty.toml"
+  "$HOME/.config/wezterm/wezterm.lua"
   "$HOME/.markdownlint.yaml"
 )
 
@@ -48,10 +48,12 @@ git -C "$DOTDIR" remote set-url --push origin "git@github.com:antonkoetzler/dotf
 # Load shared functions.
 source "$DOTDIR/install_common.sh"
 
-# Confirm, stow, clone themes.
+# Install WezTerm.
+brew install --cask wezterm
+
+# Confirm and stow.
 confirm_stow
 do_stow
-clone_alacritty_themes
 
 # Optional Neovim.
 prompt_nvim

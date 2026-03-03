@@ -4,7 +4,6 @@
 
 NVIM_SSH="git@github.com:antonkoetzler/nvim-config"
 NVIM_HTTPS="https://github.com/antonkoetzler/nvim-config"
-ALACRITTY_THEMES="https://github.com/alacritty/alacritty-theme"
 
 confirm_stow() {
   $DRY_RUN && { echo "=== DRY RUN — no files will be modified ==="; return 0; }
@@ -29,12 +28,6 @@ do_stow() {
   stow $STOW_PACKAGES
 }
 
-clone_alacritty_themes() {
-  local themes_dir="$HOME/.config/alacritty/themes"
-  if [ ! -d "$themes_dir" ]; then
-    run git clone "$ALACRITTY_THEMES" "$themes_dir"
-  fi
-}
 
 prompt_nvim() {
   read -p "Install $NVIM_SSH? THIS WILL DELETE YOUR NEOVIM CONFIGURATION. (y/N): " -r answer < /dev/tty

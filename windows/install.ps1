@@ -2,12 +2,11 @@
 param([switch]$DryRun)
 $ErrorActionPreference = "Stop"
 
-$REPO_URL         = "https://github.com/antonkoetzler/dotfiles"
-$SSH_PUSH         = "git@github.com:antonkoetzler/dotfiles.git"
-$NVIM_SSH         = "git@github.com:antonkoetzler/nvim-config"
-$NVIM_HTTPS       = "https://github.com/antonkoetzler/nvim-config"
-$ALACRITTY_THEMES = "https://github.com/alacritty/alacritty-theme"
-$DOTDIR           = "$HOME\.dotfiles"
+$REPO_URL  = "https://github.com/antonkoetzler/dotfiles"
+$SSH_PUSH  = "git@github.com:antonkoetzler/dotfiles.git"
+$NVIM_SSH  = "git@github.com:antonkoetzler/nvim-config"
+$NVIM_HTTPS = "https://github.com/antonkoetzler/nvim-config"
+$DOTDIR    = "$HOME\.dotfiles"
 
 function Write-Step { param($msg) Write-Host "`n==> $msg" -ForegroundColor Cyan }
 
@@ -80,9 +79,13 @@ if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
 }
 
 # Base dependencies.
-Write-Step "Installing git..."
+Write-Step "Installing git and wezterm..."
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
     scoop install git
+}
+scoop bucket add extras 2>$null
+if (-not (Get-Command wezterm -ErrorAction SilentlyContinue)) {
+    scoop install extras/wezterm
 }
 
 # Clone or reset dotfiles repo via HTTPS (works for everyone).
@@ -106,38 +109,15 @@ if (-not $DryRun) {
     $a = Read-Host "Continue? (y/N)"
     if ($a -notmatch '^[Yy]$') { exit 0 }
 } else {
-    Write-Host "`n=== DRY RUN — no files will be modified ===" -ForegroundColor Cyan
+    Write-Host "`n=== DRY RUN - no files will be modified ===" -ForegroundColor Cyan
 }
 
-# Stow common/ into $HOME.
+# Stow common/ and windows/ into $HOME.
 Write-Step "Stowing dotfiles..."
-Invoke-Stow -PackagePath "$DOTDIR\common" -TargetPath $HOME -Unstow
-Invoke-Stow -PackagePath "$DOTDIR\common" -TargetPath $HOME
-
-# On Windows, Alacritty reads config from %APPDATA%\alacritty\ (not ~/.config/alacritty/).
-# Use a junction (/j) — requires no elevation and no Developer Mode — so Alacritty
-# finds the stowed config at both paths.
-$alacrittyAppData = "$env:APPDATA\alacritty"
-$alacrittyStowed  = "$HOME\.config\alacritty"
-if (-not (Test-Path $alacrittyAppData)) {
-    Write-Step "Linking Alacritty config into APPDATA..."
-    if ($DryRun) {
-        Write-Host "[dry-run] Junction: $alacrittyAppData -> $alacrittyStowed" -ForegroundColor Yellow
-    } else {
-        cmd /c "mklink /j `"$alacrittyAppData`" `"$alacrittyStowed`"" | Out-Null
-    }
-}
-
-# Clone alacritty themes (external community repo, not tracked in dotfiles).
-$themesDir = "$HOME\.config\alacritty\themes"
-if (-not (Test-Path $themesDir)) {
-    Write-Step "Cloning alacritty themes..."
-    if ($DryRun) {
-        Write-Host "[dry-run] git clone $ALACRITTY_THEMES $themesDir" -ForegroundColor Yellow
-    } else {
-        git clone $ALACRITTY_THEMES $themesDir
-    }
-}
+Invoke-Stow -PackagePath "$DOTDIR\common"  -TargetPath $HOME -Unstow
+Invoke-Stow -PackagePath "$DOTDIR\windows" -TargetPath $HOME -Unstow
+Invoke-Stow -PackagePath "$DOTDIR\common"  -TargetPath $HOME
+Invoke-Stow -PackagePath "$DOTDIR\windows" -TargetPath $HOME
 
 # Optional Neovim.
 Write-Step "Optional: Neovim config"

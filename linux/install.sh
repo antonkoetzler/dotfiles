@@ -18,7 +18,7 @@ CONFLICTING_FILES=(
   "$HOME/.bashrc"
   "$HOME/.config/hypr"
   "$HOME/.tmux.conf"
-  "$HOME/.config/alacritty/alacritty.toml"
+  "$HOME/.config/wezterm/wezterm.lua"
   "$HOME/.markdownlint.yaml"
 )
 
@@ -53,10 +53,9 @@ git -C "$DOTDIR" remote set-url --push origin "git@github.com:antonkoetzler/dotf
 # Load shared functions.
 source "$DOTDIR/install_common.sh"
 
-# Confirm, stow, clone themes.
+# Confirm and stow.
 confirm_stow
 do_stow
-clone_alacritty_themes
 
 # Install packages.
 if $DRY_RUN; then
@@ -64,7 +63,7 @@ if $DRY_RUN; then
 else
   yay -S --noconfirm \
     meson cpio cmake hyprpaper hyprlock hypridle waybar wofi \
-    otf-font-awesome ttf-iosevka-nerd alacritty brave-bin thunar \
+    otf-font-awesome ttf-iosevka-nerd wezterm brave-bin thunar \
     grim slurp wf-recorder ntfs-3g udiskie brightnessctl \
     gnome-disk-utility git-completion ripgrep go npm postgresql tmux </dev/null
 fi

@@ -40,7 +40,7 @@ The Windows script (`windows/install.ps1`) is standalone and implements its own 
 
 | Config | Location | Platform |
 |--------|----------|----------|
-| Alacritty terminal | `common/.config/alacritty/` | All |
+| WezTerm terminal | `common/.config/wezterm/` | All |
 | tmux | `common/.tmux.conf` | All |
 | Hyprland WM | `linux/.config/hypr/` | Linux |
 | Waybar | `linux/.config/waybar/` | Linux |
@@ -50,12 +50,12 @@ The Windows script (`windows/install.ps1`) is standalone and implements its own 
 | Zsh | `macos/.zshrc` | macOS |
 
 Neovim config: separate repo `git@github.com:antonkoetzler/nvim-config` (install scripts offer to clone it).
-Alacritty themes: external repo `https://github.com/alacritty/alacritty-theme`, cloned to `~/.config/alacritty/themes/` by install scripts (not tracked here).
+WezTerm themes: 1001 built-in schemes shipped with WezTerm — no external repo needed. Switch by uncommenting a `local THEME = "..."` line in `wezterm.lua`.
 
 ## Key Details
 
 - **Clone**: HTTPS for everyone; SSH push remote set automatically for the owner (`git@github.com:antonkoetzler/dotfiles.git`)
-- **Font**: Iosevka Nerd Font Mono in Alacritty
+- **Font**: Iosevka Nerd Font Mono in WezTerm
 - **Hyprland border color**: `#32A8A8` (teal), 1px, 5px window rounding
-- **Linux packages**: hyprpaper, hyprlock, hypridle, waybar, wofi, alacritty, brave-bin, thunar, tmux, ripgrep, go, npm, postgresql
-- **Windows**: requires Developer Mode or Admin for symlink creation; uses Scoop for git/neovim
+- **Linux packages**: hyprpaper, hyprlock, hypridle, waybar, wofi, wezterm, brave-bin, thunar, tmux, ripgrep, go, npm, postgresql
+- **Windows**: requires Developer Mode or Admin for symlink creation; uses Scoop for git/neovim/wezterm
