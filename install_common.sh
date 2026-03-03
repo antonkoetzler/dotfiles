@@ -38,7 +38,7 @@ clone_alacritty_themes() {
 
 prompt_nvim() {
   read -p "Install $NVIM_SSH? THIS WILL DELETE YOUR NEOVIM CONFIGURATION. (y/N): " -r answer < /dev/tty
-  [[ "${answer,,}" == "y" ]] || return 0
+  [[ "$answer" =~ ^[Yy]$ ]] || return 0
   install_neovim_pkg
   run rm -rf "$HOME/.config/nvim"
   if $DRY_RUN; then
