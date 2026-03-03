@@ -16,7 +16,7 @@ curl -fsSL https://raw.githubusercontent.com/antonkoetzler/dotfiles/main/macos/i
 
 ### Windows
 
-> Requires Developer Mode (Settings → System → For developers) or running PowerShell as Administrator.
+> Requires Developer Mode: Settings → System → For developers → toggle **Developer Mode** on, then **sign out and back in** so the symlink privilege takes effect. Do **not** run as Administrator — Scoop refuses to install in elevated sessions.
 
 ```powershell
 irm https://raw.githubusercontent.com/antonkoetzler/dotfiles/main/windows/install.ps1 | iex

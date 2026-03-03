@@ -59,15 +59,18 @@ function Invoke-Stow {
     }
 }
 
-# Verify symlink capability (requires Developer Mode or Administrator).
+# Verify symlink capability (requires Developer Mode).
 Write-Step "Checking symlink support..."
+$testSrc  = [System.IO.Path]::GetTempFileName()
+$testLink = "$env:TEMP\dotfiles_symlink_test"
 try {
-    $testPath = "$env:TEMP\dotfiles_symlink_test"
-    New-Item -ItemType SymbolicLink -Path $testPath -Target $env:TEMP -ErrorAction Stop | Out-Null
-    Remove-Item $testPath -Force
+    New-Item -ItemType SymbolicLink -Path $testLink -Target $testSrc -ErrorAction Stop | Out-Null
+    Remove-Item $testLink -Force
 } catch {
-    Write-Host "ERROR: Cannot create symlinks.`nEnable Developer Mode (Settings -> System -> For developers) or run as Administrator." -ForegroundColor Red
+    Write-Host "ERROR: Cannot create symlinks.`nEnable Developer Mode: Settings -> System -> For developers." -ForegroundColor Red
     exit 1
+} finally {
+    Remove-Item $testSrc -Force -ErrorAction SilentlyContinue
 }
 
 # Install Scoop (user-space package manager).
@@ -111,6 +114,19 @@ if (-not $DryRun) {
 Write-Step "Stowing dotfiles..."
 Invoke-Stow -PackagePath "$DOTDIR\common" -TargetPath $HOME -Unstow
 Invoke-Stow -PackagePath "$DOTDIR\common" -TargetPath $HOME
+
+# On Windows, Alacritty reads config from %APPDATA%\alacritty\ (not ~/.config/alacritty/).
+# Create a directory symlink so both paths resolve to the same stowed config.
+$alacrittyAppData = "$env:APPDATA\alacritty"
+$alacrittyStowed  = "$HOME\.config\alacritty"
+if (-not (Test-Path $alacrittyAppData)) {
+    Write-Step "Linking Alacritty config into APPDATA..."
+    if ($DryRun) {
+        Write-Host "[dry-run] Link: $alacrittyAppData -> $alacrittyStowed" -ForegroundColor Yellow
+    } else {
+        New-Item -ItemType SymbolicLink -Path $alacrittyAppData -Target $alacrittyStowed | Out-Null
+    }
+}
 
 # Clone alacritty themes (external community repo, not tracked in dotfiles).
 $themesDir = "$HOME\.config\alacritty\themes"
