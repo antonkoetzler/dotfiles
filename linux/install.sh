@@ -8,7 +8,8 @@ for arg in "$@"; do
 done
 
 # Wrap commands: echo in dry-run, execute otherwise.
-run() { $DRY_RUN && { echo "[dry-run] $*"; return 0; }; "$@"; }
+# </dev/null prevents subprocesses from consuming the curl pipe when run via `curl | bash`.
+run() { $DRY_RUN && { echo "[dry-run] $*"; return 0; }; "$@" </dev/null; }
 
 # Config.
 DOTDIR="$HOME/.dotfiles"
@@ -24,13 +25,13 @@ CONFLICTING_FILES=(
 install_neovim_pkg() { run yay -S --noconfirm neovim; }
 
 # Base dependencies (needed even in dry-run for the stow simulation).
-sudo pacman -S --needed --noconfirm git stow base-devel
+sudo pacman -S --needed --noconfirm git stow base-devel </dev/null
 
 # Install yay (AUR helper).
 if ! command -v yay >/dev/null 2>&1; then
   run git clone https://aur.archlinux.org/yay.git /tmp/yay
   if ! $DRY_RUN; then
-    (cd /tmp/yay && makepkg -si --noconfirm)
+    (cd /tmp/yay && makepkg -si --noconfirm </dev/null)
   else
     echo "[dry-run] cd /tmp/yay && makepkg -si --noconfirm"
   fi
@@ -65,7 +66,7 @@ else
     meson cpio cmake hyprpaper hyprlock hypridle waybar wofi \
     otf-font-awesome ttf-iosevka-nerd alacritty brave-bin thunar \
     grim slurp wf-recorder ntfs-3g udiskie brightnessctl \
-    gnome-disk-utility git-completion ripgrep go npm postgresql tmux
+    gnome-disk-utility git-completion ripgrep go npm postgresql tmux </dev/null
 fi
 
 # Reload Hyprland to apply new config.

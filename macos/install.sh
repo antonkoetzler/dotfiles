@@ -8,7 +8,8 @@ for arg in "$@"; do
 done
 
 # Wrap commands: echo in dry-run, execute otherwise.
-run() { $DRY_RUN && { echo "[dry-run] $*"; return 0; }; "$@"; }
+# </dev/null prevents subprocesses from consuming the curl pipe when run via `curl | bash`.
+run() { $DRY_RUN && { echo "[dry-run] $*"; return 0; }; "$@" </dev/null; }
 
 # Config.
 DOTDIR="$HOME/.dotfiles"
@@ -25,11 +26,11 @@ install_neovim_pkg() { run brew install neovim; }
 
 # Install Homebrew if missing.
 if ! command -v brew >/dev/null 2>&1; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
 fi
 
 # Base dependencies (needed even in dry-run for the stow simulation).
-brew install git stow
+brew install git stow </dev/null
 
 # Clone or reset dotfiles repo via HTTPS (works for everyone).
 # Push remote is set to SSH so the owner can push with git directly.
