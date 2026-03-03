@@ -8,20 +8,10 @@
 curl -fsSL https://raw.githubusercontent.com/antonkoetzler/dotfiles/main/linux/install.sh | bash
 ```
 
-#### Dry run
-```bash
-curl -fsSL https://raw.githubusercontent.com/antonkoetzler/dotfiles/main/linux/install.sh | bash -s -- --dry-run
-```
-
 ### macOS
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/antonkoetzler/dotfiles/main/macos/install.sh | bash
-```
-
-#### Dry run
-```bash
-curl -fsSL https://raw.githubusercontent.com/antonkoetzler/dotfiles/main/macos/install.sh | bash -s -- --dry-run
 ```
 
 ### Windows
@@ -30,11 +20,6 @@ curl -fsSL https://raw.githubusercontent.com/antonkoetzler/dotfiles/main/macos/i
 
 ```powershell
 irm https://raw.githubusercontent.com/antonkoetzler/dotfiles/main/windows/install.ps1 | iex
-```
-
-#### Dry run
-```powershell
-& ([ScriptBlock]::Create((irm 'https://raw.githubusercontent.com/antonkoetzler/dotfiles/main/windows/install.ps1'))) -DryRun
 ```
 
 ## Common and OS-specific files
